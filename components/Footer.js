@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full h-auto border-t grid grid-cols-3 bg-dark-green text-sm">
+    <footer className="w-full h-auto border-t grid grid-cols-3 bg-dark-green text-sm text-white">
       <div>
         <p>Trænershoppen</p>
         <p>Vestergade 19b, 8000 Aarhus</p>
@@ -12,7 +12,7 @@ export default function Footer() {
         <p>Inspiratoins side</p>
       </div>
       <div>
-        <h4>Telefontider</h4>
+        <h4 className="">Telefontider</h4>
         <p>Mandag - Torsdag: 8 - 16</p>
         <p>Fredag: 8 - 15.30</p>
         <p>Weekend: Lukket</p>
