@@ -14,8 +14,8 @@
 
 @theme inline {
   --color-background: var(--light_gray);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-hanken-sans);
+  --font-mono: var(--font-hanken-mono);
 }
 
 @media (prefers-color-scheme: dark) {
