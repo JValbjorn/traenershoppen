@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "molend";
+  src: url("/fonts/molend-v4.tff") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --white: #fcfcfc;
   --black: #0f0f0f;
@@ -12,21 +20,20 @@
   --gray: #cdcdcd;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--light_gray);
   --font-sans: var(--font-hanken-sans);
-  --font-mono: var(--font-hanken-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--light_gray);
+    --foreground: var(--light_gray);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: hanken-grotesk, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* font-family: hanken-grotesk, -apple-system, BlinkMacSystemFont, sans-serif; */
 }

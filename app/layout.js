@@ -1,4 +1,5 @@
 import { Hanken_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 
 import "./globals.css";
 
@@ -7,10 +8,9 @@ const HankenSans = Hanken_Grotesk({
   subsets: ["latin"],
 });
 
-const HankenMono = Hanken_Grotesk({
-  variable: "--font-hanken-mono",
-  subsets: ["latin"],
-});
+// const Molend = localFont({
+//   src: "./public/fonts/molend-v4.tff",
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${HankenSans.variable} ${HankenMono.variable} h-full antialiased`}
+      className={`${HankenSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
