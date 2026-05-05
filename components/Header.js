@@ -1,21 +1,21 @@
 export default function Header() {
   return (
-    <header className="bg-var(--dark_green) dark:var(--orange) py-4 px-6 flex flex-row flex-initial justify-around items-center">
+    <header className="bg-dark-green py-4 px-6 flex flex-row flex-initial justify-around items-center w-full">
       <div className="flex items-center justify-between">
         {/* <img src="/logo.png" alt="Logo" className="h-8 w-auto" /> */}
-        <h1 className="molend text-2xl font-bold">Trænershoppen</h1>
+        <h1 className="molend text-2xl text-white font-bold">Trænershoppen</h1>
       </div>
       <div className="mt-4 flex space-x-4">
-        <button className="bg-var(--orange) text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
+        <button className="text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
           Fodbold
         </button>
-        <button className="bg-var(--orange) text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
+        <button className="text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
           Håndbold
         </button>
-        <button className="bg-var(--orange) text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
+        <button className="text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
           Tøj
         </button>
-        <button className="bg-var(--orange) text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
+        <button className="text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">
           Øvelses inspiration
         </button>
       </div>
