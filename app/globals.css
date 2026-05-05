@@ -38,6 +38,11 @@
     font-family: "molend";
     background-color: var(--shaded_green);
   }
+  h2 {
+    font-family: "molend";
+    background-color: var(--orange);
+    font-size: 1.5rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

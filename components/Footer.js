@@ -12,6 +12,7 @@ export default function Footer() {
         <p>Inspiratoins side</p>
       </div>
       <div>
+        <h2>This is ANOTHER test</h2>
         <h4>Telefontider</h4>
         <p>Mandag - Torsdag: 8 - 16</p>
         <p>Fredag: 8 - 15.30</p>
