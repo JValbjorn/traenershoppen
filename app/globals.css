@@ -13,7 +13,7 @@
   --orange: #f26717;
   --dark_green: #283515;
   --light_green: #82cb17;
-  --green: #374f23;
+  --shaded_green: #374f23;
   --extra_light_green: #f9fcf3;
   --gray: #cdcdcd;
 }
@@ -26,7 +26,7 @@
   --color-orange: var(--orange);
   --color-dark-green: var(--dark_green);
   --color-light-green: var(--light_green);
-  --color-green: var(--green);
+  --color-shaded-green: var(--shaded_green);
   --color-extra-light-green: var(--extra_light_green);
   --color-background: var(--light_gray);
   --color-foreground: var(--black);
@@ -36,7 +36,7 @@
 @layer base {
   h1 {
     font-family: "molend";
-    background-color: blue;
+    background-color: var(--shaded_green);
   }
 }
 
