@@ -3,16 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
-
-
 const HankenSans = Hanken_Grotesk({
   variable: "--font-hanken-sans",
   subsets: ["latin"],
 });
 
-// const Molend = localFont({
-//   src: "./public/fonts/molend-v4.tff",
-// });
 
 export const metadata = {
   title: "Trænershoppen",
@@ -21,12 +16,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="da"
-      className={`${HankenSans.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-      
+    <html lang="da" className={`${HankenSans.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
