@@ -3,7 +3,7 @@ export default function Header() {
     <header className="bg-dark-green py-4 px-6 flex flex-row flex-initial justify-around items-center w-full">
       <div className="flex items-center justify-between">
         {/* <img src="/logo.png" alt="Logo" className="h-8 w-auto" /> */}
-        <h1 className="molend text-2xl text-white font-bold">Trænershoppen</h1>
+        <article className="text-2xl text-white font-bold">Trænershoppen</article>
       </div>
       <div className="mt-4 flex space-x-4">
         <button className="text-white py-2 px-4 rounded-md hover:bg-var(--light_green)">

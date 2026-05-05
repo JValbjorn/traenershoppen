@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray)">
       <Header />
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
+      <main className=" flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -16,9 +16,11 @@ export default function Home() {
           priority
         />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="molend max-w-xs text-3xl font-semibold leading-10 tracking-tight">
+          <h1 className=" max-w-xs text-3xl font-semibold leading-10 tracking-tight">
             To get started, edit the page.js file. Hallo
           </h1>
+          <h2>This is a test</h2>
+          <h3>This is also a test</h3>
           <p className="max-w-md text-lg leading-8 ">
             Looking for a starting point or more instructions? Head over to{" "}
             <a

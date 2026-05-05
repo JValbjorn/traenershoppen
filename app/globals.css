@@ -2,11 +2,9 @@
 
 @font-face {
   font-family: "molend";
-  src: url("/fonts/molend-v4.tff") format("truetype");
+  src: url("/public/fonts/molend.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+  font-style: normal;}
 
 :root {
   --white: #fcfcfc;
@@ -33,6 +31,13 @@
   --color-background: var(--light_gray);
   --color-foreground: var(--black);
   --font-sans: var(--font-hanken-sans);
+}
+
+@layer base {
+  h1 {
+    font-family: "molend";
+    background-color: blue;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
