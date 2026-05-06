@@ -2,6 +2,7 @@ import { Hanken_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 
 
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${HankenSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col"><Header />{children}</body>
       
     </html>
   );
