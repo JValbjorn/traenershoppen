@@ -197,6 +197,57 @@
           ]
         }
       ]
+    },
+    "5": {
+      "title": "Select Boldsæt - 10 Bolde Numero 10 V23",
+      "brand": "Select",
+      "price": 2750,
+      "oldPrice": "",
+      "gender": "unisex",
+      "sports": ["fodbold"],
+      "categories": ["bold"],
+      "description": "Nyt og forbedret PU-syntetlæder med samme struktur som vores topbold Brillant Super.  PU-syntetlæder lamineret med 2 mm skumkonstruktion, der gør bolden mere blød at røre ved. Zero-Wing blære giver et livligt opspring og optimal rundhed. De 32 håndsyede felter sikrer et lige svæv gennem luften.",
+      "specification": {
+        "materials": "PU-syntetlæder",
+        "qualities": []
+      },
+      "exercises": ["id1", "id2", "id3"],
+      "colors": [
+        {
+          "id": "yellow",
+          "color": "gul",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "4",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "5",
+              "stock": 9
+            }
+          ]
+        },
+        {
+          "id": "turquoise",
+          "color": "turkis",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "4",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "5",
+              "stock": 9
+            }
+          ]
+        }
+      ]
     }
   },
 
