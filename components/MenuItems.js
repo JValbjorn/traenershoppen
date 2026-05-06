@@ -101,7 +101,6 @@ const navItems = [
           { title: "Håndbold", href: "#haandbold-oevelser" },
         ],
       },
-      
     ],
   },
 ];
@@ -109,8 +108,17 @@ const navItems = [
 export default function MenuItems() {
   const [activeItem, setActiveItem] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openSections, setOpenSections] = useState({});
   const [headerHeight, setHeaderHeight] = useState(80);
   const closeTimer = useRef(null);
+
+  const toggleSection = (itemTitle, sectionTitle) => {
+    const key = `${itemTitle}-${sectionTitle}`;
+    setOpenSections((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
 
   useEffect(() => {
     const updateHeight = () => {
@@ -256,35 +264,59 @@ export default function MenuItems() {
 
       <div
         className={`fixed inset-x-0 z-40 overflow-y-auto bg-dark-green px-6 py-6 transition-transform duration-200 md:hidden ${
-          mobileOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+          mobileOpen
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-full opacity-0 pointer-events-none"
         }`}
-        style={{ top: `${headerHeight}px`, height: `calc(100vh - ${headerHeight}px)` }}
+        style={{
+          top: `${headerHeight}px`,
+          height: `calc(100vh - ${headerHeight}px)`,
+        }}
       >
-       
-
         <div className="mt-6 space-y-8">
           {navItems.map((item) => (
-            <div key={item.title} className="space-y-4 border-b border-white/10 pb-6">
+            <div
+              key={item.title}
+              className="space-y-4 border-b border-white/10 pb-6"
+            >
               <p className="text-lg font-semibold text-white">{item.title}</p>
               {item.sections ? (
                 <div className="space-y-4">
-                  {item.sections.map((section) => (
-                    <div key={section.title} className="space-y-2">
-                      <p className="text-sm uppercase tracking-[0.2em] text-white/70">{section.title}</p>
-                      <div className="space-y-2 pl-2">
-                        {section.categories.map((category) => (
-                          <a
-                            key={category.title}
-                            href={category.href}
-                            onClick={closeMobileMenu}
-                            className="block px-3 py-2 text-white transition hover:bg-light-green"
-                          >
-                            {category.title}
-                          </a>
-                        ))}
+                  {item.sections.map((section) => {
+                    const sectionKey = `${item.title}-${section.title}`;
+                    const isOpenSection = openSections[sectionKey];
+
+                    return (
+                      <div key={section.title} className="space-y-2">
+                        <button
+                          type="button"
+                          onClick={() => toggleSection(item.title, section.title)}
+                          className="flex w-full items-center justify-between text-left text-sm uppercase tracking-[0.2em] text-white/70 transition hover:text-white"
+                        >
+                          <span>{section.title}</span>
+                          <span className="text-xl">{isOpenSection ? "−" : "+"}</span>
+                        </button>
+                        <div
+                          className={`overflow-hidden transition-all duration-200 ${
+                            isOpenSection ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                          }`}
+                        >
+                          <div className="space-y-2 pl-2 pt-2">
+                            {section.categories.map((category) => (
+                              <a
+                                key={category.title}
+                                href={category.href}
+                                onClick={closeMobileMenu}
+                                className="block rounded-lg px-3 py-2 text-white transition hover:bg-light-green"
+                              >
+                                {category.title}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               ) : (
                 <div className="space-y-2 pl-2">
