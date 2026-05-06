@@ -9,28 +9,11 @@ export default function Home() {
       {/* <FanSquare /> */}
       <Fan />
       <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10">
-        <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start z-2">
-          <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <h1 className="molend max-w-xs text-3xl font-semibold leading-10 tracking-tight">
-              To get started, edit the page.js file. Hallo
-            </h1>
-            <p className="max-w-md text-lg leading-8 ">
-              Looking for a starting point or more instructions? Head over to{" "}
-              <a
-                href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                className="font-medium  "
-              >
-                Templates
-              </a>{" "}
-              or the{" "}
-              <a
-                href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                className="font-medium "
-              >
-                Learning
-              </a>{" "}
-              center.
-            </p>
+        <main className="flex flex-1 w-full flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start z-2">
+          <div className="w-full flex flex-row items-center justify-around text-center sm:items-start sm:text-left">
+            <button className="bg-orange px-5 py-2 w-40">Fodbold</button>
+            <button className="bg-orange px-5 py-2 w-40">Håndbold</button>
+            <button className="bg-orange px-5 py-2 w-40">Tøj</button>
           </div>
           <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
             <a
@@ -49,7 +32,7 @@ export default function Home() {
               Deploy Now
             </a>
             <a
-              className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/.08 px-5 transition-colors hover:border-transparent hover:bg-black/.04 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-158px"
+              className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/.08 bg-orange px-5 transition-colors hover:border-transparent hover:bg-black/.04 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-158px"
               href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
               target="_blank"
               rel="noopener noreferrer"
