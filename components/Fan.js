@@ -8,7 +8,7 @@ export default function Fan() {
       viewBox="0 0 1687.12 1385.24"
       className="absolute top-[-45vh] z-0 w-[120vw] left-[-10vw] h-auto"
     >
-      {/* Define patterns for images */}
+      {/* Definerer patterns for images - "baggrundsbilleder" i hver path*/}
       <defs>
         <pattern
           id="image-left"
