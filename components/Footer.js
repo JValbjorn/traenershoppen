@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full h-auto grid grid-cols-4 justify-center align-top bg-dark-green text-sm text-white p-4">
+    <footer className="w-full h-auto grid grid-cols-4 justify-center align-top bg-dark-green text-sm text-white p-10">
       <div className="self-start justify-self-center">
         <p className="font-bold">Trænershoppen</p>
         <p>Vestergade 19b, 8000 Aarhus</p>
@@ -19,7 +19,7 @@ export default function Footer() {
         <p>Fredag: 8 - 15.30</p>
         <p>Weekend: Lukket</p>
       </div>
-      <Image src="/images/pift.png" alt="Trænershoppen - tilbage til forsiden" width="100" height="100"/>
+      <Image src="/img/pift.png" alt="Trænershoppen - tilbage til forsiden" className="justify-self-center" width="70" height="100"/>
     </footer>
   );
 }
