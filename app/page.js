@@ -1,13 +1,35 @@
 import Image from "next/image";
 import Fan from "@/components/Fan";
-import FanSquare from "@/components/FanSquare";
 
 
 export default function Home() {
   return (
     <div>
-      {/* <FanSquare /> */}
-      <Fan />
+      <div>
+        <Fan />
+        <Image
+          src="/img/fodbold.png"
+          alt="Fodbold"
+          width={100}
+          height={100}
+          className="absolute top-[30%] left-[10%]"
+        />
+        <Image
+          src="/img/haandbold.png"
+          alt="Håndbold"
+          width={100}
+          height={100}
+          className="absolute top-[40%] left-[50%] translate-x-[-50%]"
+        />
+        <Image
+          src="/img/toej.png"
+          alt="Tøj"
+          width={100}
+          height={100}
+          className="absolute top-[30%] right-[10%]"
+        />
+      </div>
+
       <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10">
         <main className="flex flex-1 w-full flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start z-2">
           <div className="w-full flex flex-row items-center justify-around text-center sm:items-start sm:text-left">
