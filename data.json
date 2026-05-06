@@ -1,34 +1,262 @@
 {
   "products": {
     "1": {
-      "id": 1,
       "title": "Select Spain Coach jakke",
+      "brand": "Select",
       "price": 799.95,
       "oldPrice": 1000,
-      "img": "",
       "gender": "male",
-      "colors": ["black"],
-      "sizes": ["xs", "s", "m", "l", "xl", "xxl", "xxxl"],
-      "sports":["fodbold"],
+      "sports": ["fodbold"],
       "categories": ["jakke"],
       "description": "Vores Coach jakke er den perfekte følgesvend til de køligere måneder på sidelinjen. Med praktiske sidelommer med lynlås samt inderlommer har du altid dine vigtige ting indenfor rækkevidde. Jakken er designet med varme i tankerne, med et blødt fleecefór i lommerne og på indersiden af den nedre ryg. Den to-vejs lynlås foran giver dig mulighed for ekstra ventilation eller beskyttelse mod vinden. Dertil er der tilføjet en ny slids bagpå, så du let kan sætte dig ned og rejse dig igen under kampens hede.",
-      "specification":{
+      "specification": {
         "materials": "100% polyester",
-        "qualities": "Vandtæt, åndbar, vindtæt"
+        "qualities": ["Vandtæt", "åndbar", "vindtæt"]
       },
-      "inventory": 9,
-      "exercises":["id1", "id2", "id3"]
-
+      "exercises": [],
+      "colors": [
+        {
+          "id": "black",
+          "color": "sort",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "xs",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "s",
+              "stock": 9
+            },
+            {
+              "id": "var_003",
+              "size": "m",
+              "stock": 12
+            },
+            {
+              "id": "var_004",
+              "size": "l",
+              "stock": 4
+            },
+            {
+              "id": "var_005",
+              "size": "xl",
+              "stock": 20
+            },
+            {
+              "id": "var_006",
+              "size": "xxl",
+              "stock": 19
+            },
+            {
+              "id": "var_007",
+              "size": "xxxl",
+              "stock": 9
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "title": "Select Numero 10 V23",
+      "brand": "Select",
+      "price": 289.95,
+      "oldPrice": 899,
+      "gender": "unisex",
+      "sports": ["fodbold"],
+      "categories": ["bold"],
+      "description": "Nyt og forbedret PU-syntetlæder med samme struktur som vores topbold Brillant Super.  PU-syntetlæder lamineret med 2 mm skumkonstruktion, der gør bolden mere blød at røre ved. Zero-Wing blære giver et livligt opspring og optimal rundhed. De 32 håndsyede felter sikrer et lige svæv gennem luften.",
+      "specification": {
+        "materials": "PU-syntetlæder",
+        "qualities": []
+      },
+      "exercises": ["id1", "id2", "id3"],
+      "colors": [
+        {
+          "id": "yellow",
+          "color": "gul",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "4",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "5",
+              "stock": 9
+            }
+          ]
+        },
+        {
+          "id": "turquoise",
+          "color": "turkis",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "4",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "5",
+              "stock": 9
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "title": "Select Boldsæk Fodbold 18-20",
+      "brand": "Select",
+      "price": 239.95,
+      "oldPrice": 300,
+      "gender": "unisex",
+      "sports": ["fodbold"],
+      "categories": ["fodboldudstyr"],
+      "description": "Boldsæk med plads til 18-20 fodbolde.",
+      "specification": {
+        "materials": "",
+        "qualities": []
+      },
+      "exercises": [],
+      "colors": [
+        {
+          "id": "black",
+          "color": "sort",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "4",
+              "stock": 4
+            }
+          ]
+        }
+      ]
+    },
+    "4": {
+      "title": "Hummel Essential Regnjakke til voksne - Sort",
+      "brand": "Hummel",
+      "price": 279.95,
+      "oldPrice": 350,
+      "gender": "unisex",
+      "sports": ["fodbold"],
+      "categories": ["jakke"],
+      "description": "Vand og smudsafvisende jakke. Oplagt til sport udenfor.",
+      "specification": {
+        "materials": "Genanvendt polyester",
+        "qualities": ["Vandafvisende", "smudsafvisende", "hurtigtørrende"]
+      },
+      "exercises": [],
+      "colors": [
+        {
+          "id": "black",
+          "color": "sort",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "xs",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "s",
+              "stock": 9
+            },
+            {
+              "id": "var_003",
+              "size": "m",
+              "stock": 12
+            },
+            {
+              "id": "var_004",
+              "size": "l",
+              "stock": 4
+            },
+            {
+              "id": "var_005",
+              "size": "xl",
+              "stock": 20
+            },
+            {
+              "id": "var_006",
+              "size": "xxl",
+              "stock": 19
+            },
+            {
+              "id": "var_007",
+              "size": "xxxl",
+              "stock": 9
+            }
+          ]
+        }
+      ]
+    },
+    "5": {
+      "title": "Select Boldsæt - 10 Bolde Numero 10 V23",
+      "brand": "Select",
+      "price": 2750,
+      "oldPrice": "",
+      "gender": "unisex",
+      "sports": ["fodbold"],
+      "categories": ["bold"],
+      "description": "Nyt og forbedret PU-syntetlæder med samme struktur som vores topbold Brillant Super.  PU-syntetlæder lamineret med 2 mm skumkonstruktion, der gør bolden mere blød at røre ved. Zero-Wing blære giver et livligt opspring og optimal rundhed. De 32 håndsyede felter sikrer et lige svæv gennem luften.",
+      "specification": {
+        "materials": "PU-syntetlæder",
+        "qualities": []
+      },
+      "exercises": ["id1", "id2", "id3"],
+      "colors": [
+        {
+          "id": "yellow",
+          "color": "gul",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "4",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "5",
+              "stock": 9
+            }
+          ]
+        },
+        {
+          "id": "turquoise",
+          "color": "turkis",
+          "images": ["", ""],
+          "variants": [
+            {
+              "id": "var_001",
+              "size": "4",
+              "stock": 4
+            },
+            {
+              "id": "var_002",
+              "size": "5",
+              "stock": 9
+            }
+          ]
+        }
+      ]
     }
   },
 
-  "exercises":{
+  "exercises": {
     "id1": {
-      "id": "id1",
       "title": "Fodboldtræning",
-      "img": ["", ""],
-      "difficulty":["let", "moderat", "svær"],
-      "sports":["fodbold"],
+      "images": ["", ""],
+      "difficulty": ["let", "moderat", "svær"],
+      "sports": ["fodbold"],
       "agegroup": ["børn", "unge", "voksne"],
       "focus": ["teknik", "styrke", "kondition"],
       "players": "8-12",
@@ -36,14 +264,26 @@
       "description": "Træn dine færdigheder på banen med vores fodboldtræning. Uanset om du er nybegynder eller erfaren spiller, har vi øvelser og træningsprogrammer, der passer til dit niveau. Forbedr din teknik, styrke og kondition med vores omfattende træningsressourcer."
     },
     "id2": {
-      "id": "id2",
-      "title": "Løbetræning",
-      "description": "Forbedr din løbepræstation med vores løbetræning. Vi tilbyder træningsprogrammer, der hjælper dig med at opbygge udholdenhed, forbedre din hastighed og forebygge skader. Uanset om du træner til et maraton eller bare ønsker at komme i form, har vi ressourcerne til at støtte dig."
+      "title": "Præcisionstræning",
+      "images": ["", ""],
+      "difficulty": ["let", "moderat", "svær"],
+      "sports": ["fodbold"],
+      "agegroup": ["børn", "unge", "voksne"],
+      "focus": ["teknik", "styrke", "kondition"],
+      "players": "8-12",
+      "gear": ["bold", "cones", "mål"],
+      "description": "Træn dine færdigheder på banen med vores fodboldtræning. Uanset om du er nybegynder eller erfaren spiller, har vi øvelser og træningsprogrammer, der passer til dit niveau. Forbedr din teknik, styrke og kondition med vores omfattende træningsressourcer."
     },
     "id3": {
-      "id": "id3",
-      "title": "Styrketræning",
-      "description": "Opbyg muskelstyrke og forbedr din fysik med vores styrketræning. Vi tilbyder øvelser og programmer, der fokuserer på forskellige muskelgrupper for at hjælpe dig med at nå dine fitnessmål. Uanset om du er nybegynder eller erfaren, har vi ressourcerne til at støtte din træning."
+      "title": "Driplerøvelser",
+      "images": ["", ""],
+      "difficulty": ["let", "moderat", "svær"],
+      "sports": ["fodbold"],
+      "agegroup": ["børn", "unge", "voksne"],
+      "focus": ["teknik", "styrke", "kondition"],
+      "players": "8-12",
+      "gear": ["bold", "cones", "mål"],
+      "description": "Træn dine færdigheder på banen med vores fodboldtræning. Uanset om du er nybegynder eller erfaren spiller, har vi øvelser og træningsprogrammer, der passer til dit niveau. Forbedr din teknik, styrke og kondition med vores omfattende træningsressourcer."
     }
   }
 }
