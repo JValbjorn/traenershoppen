@@ -2,9 +2,10 @@ import MenuItems from "./MenuItems";
 
 export default function Header() {
   return (
-    <header className="bg-dark-green py-4 px-6 flex flex-row items-center justify-between w-full overflow-visible">
-      <div className="flex items-center gap-6">
-        <h1 className="molend text-2xl text-white font-bold">Trænershoppen</h1>
+    <header className="bg-dark-green py-4 px-6 flex flex-row flex-initial justify-around items-center w-full">
+      <div className="flex items-center justify-between">
+        {/* <img src="/logo.png" alt="Logo" className="h-8 w-auto" /> */}
+        <article className="text-2xl text-white font-bold">Trænershoppen</article>
       </div>
       <div className="flex-1">
         <MenuItems />
