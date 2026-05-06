@@ -1,3 +1,5 @@
+"use client";
+import {motion} from "motion/react"
 import Image from "next/image";
 import Fan from "@/components/Fan";
 
@@ -7,13 +9,16 @@ export default function Home() {
     <section className="relative">
       <div>
         <Fan />
-        <Image
-          src="/img/hero-soccer-ball.png"
-          alt="Fodbold"
-          width={150}
-          height={100}
-          className="absolute top-[5%] left-[10%]"
-        />
+        <motion.div>
+          <Image
+            src="/img/hero-soccer-ball.png"
+            alt="Fodbold"
+            width={150}
+            height={100}
+            className="absolute top-[5%] left-[10%]"
+          />
+        </motion.div>
+
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Håndbold"
