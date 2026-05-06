@@ -7,8 +7,9 @@ export default function Home() {
   return (
     <div>
       {/* <FanSquare /> */}
-      <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250">
-        <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
+      <Fan />
+      <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10">
+        <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start z-2">
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
             <h1 className="molend max-w-xs text-3xl font-semibold leading-10 tracking-tight">
               To get started, edit the page.js file. Hallo
@@ -58,7 +59,6 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <Fan />
     </div>
   );
 }
