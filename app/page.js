@@ -4,39 +4,39 @@ import Fan from "@/components/Fan";
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
       <div>
         <Fan />
         <Image
-          src="/img/fodbold.png"
+          src="/img/hero-soccer-ball.png"
           alt="Fodbold"
-          width={100}
+          width={150}
           height={100}
-          className="absolute top-[30%] left-[10%]"
+          className="absolute top-[10%] left-[10%]"
         />
         <Image
-          src="/img/haandbold.png"
+          src="/img/hero-soccer-ball.png"
           alt="Håndbold"
-          width={100}
+          width={150}
           height={100}
-          className="absolute top-[40%] left-[50%] translate-x-[-50%]"
+          className="absolute top-[5%] left-[50%] translate-x-[-50%]"
         />
         <Image
-          src="/img/toej.png"
+          src="/img/hero-soccer-ball.png"
           alt="Tøj"
-          width={100}
+          width={150}
           height={100}
-          className="absolute top-[30%] right-[10%]"
+          className="absolute top-[10%] right-[10%]"
         />
+        <div className="w-full flex flex-row items-center justify-around text-center sm:items-start sm:text-left relative">
+          <button className="bg-orange px-5 py-2 w-40">Fodbold</button>
+          <button className="bg-orange px-5 py-2 w-40">Håndbold</button>
+          <button className="bg-orange px-5 py-2 w-40">Tøj</button>
+        </div>
       </div>
 
       <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10">
         <main className="flex flex-1 w-full flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start z-2">
-          <div className="w-full flex flex-row items-center justify-around text-center sm:items-start sm:text-left">
-            <button className="bg-orange px-5 py-2 w-40">Fodbold</button>
-            <button className="bg-orange px-5 py-2 w-40">Håndbold</button>
-            <button className="bg-orange px-5 py-2 w-40">Tøj</button>
-          </div>
           <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
             <a
               className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-158px"
