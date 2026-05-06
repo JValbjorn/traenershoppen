@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="bg-dark-green py-4 px-6 flex flex-row flex-initial justify-around items-center w-full">
+    <header className="bg-dark-green py-4 px-6 flex flex-row flex-initial justify-around items-center w-full z-10">
       <div className="flex items-center justify-between">
         {/* <img src="/logo.png" alt="Logo" className="h-8 w-auto" /> */}
         <h1 className="molend text-2xl text-white font-bold">Trænershoppen</h1>
