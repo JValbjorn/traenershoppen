@@ -19,7 +19,7 @@ export default function Footer() {
         <p>Fredag: 8 - 15.30</p>
         <p>Weekend: Lukket</p>
       </div>
-      <Image />
+      <Image src="/images/pift.png" alt="Trænershoppen - tilbage til forsiden" width="100" height="100"/>
     </footer>
   );
 }
