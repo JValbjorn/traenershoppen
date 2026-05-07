@@ -48,8 +48,8 @@ export default function Home() {
       </section>
       <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
         <section className="w-full h-250 z-2 relative flex">
-          <div>
-            <HomePageArch className="cls-5 fill-white w-full h-auto" />
+          <div className="cls-5 fill-white w-full h-auto" >
+            <HomePageArch/>
           </div>
           {/* <AnimatedImage /> */}
           <Image
