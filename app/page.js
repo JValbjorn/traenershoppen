@@ -15,29 +15,29 @@ export default function Home() {
       <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
         <Fan />
       </div>
-      <section>
+      <section className="flex justify-center 2xl:mt-[50vh] xl:mt-[42vh] lg:mt-[35vh] md:mt-[25vh]">
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Fodbold"
           width={150}
           height={150}
-          className="absolute top-[5%] left-[10%] w-1/10"
+          className="absolute top-[9%] left-[10%] w-1/10"
         />
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Håndbold"
           width={150}
           height={150}
-          className="absolute top-[2%] left-[50%] w-1/10 translate-x-[-50%]"
+          className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
         />
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Tøj"
           width={150}
           height={150}
-          className="absolute top-[5%] right-[10%] w-1/10"
+          className="absolute top-[9%] right-[10%] w-1/10"
         />
-        <div className="relative w-full flex md:flex-row flex-col 2xl:mt-[45vh] xl:mt-[40vh] lg:mt-[30vh] md:mt-[23vh] items-center justify-around shrink text-center">
+        <div className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center">
           <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
             text="Håndbold"
