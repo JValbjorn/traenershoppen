@@ -47,9 +47,9 @@ export default function Home() {
         </div>
       </section>
       <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
-        <section className="w-full h-250 z-2 relative flex flex-row">
+        <section className="w-full h-250 z-2 relative flex">
           <div>
-            <HomePageArch />
+            <HomePageArch className="cls-5 fill-white w-full h-auto" />
           </div>
           {/* <AnimatedImage /> */}
           <Image
