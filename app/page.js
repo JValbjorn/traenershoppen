@@ -45,7 +45,14 @@ export default function Home() {
           <CTAButton text="Tøj" onClick={() => console.log("Tøj clicked")} />
         </section>
         <section className=" z-2 relative">
-          <AnimatedImage />
+          {/* <AnimatedImage /> */}
+          <Image
+            src="/img/hero-soccer-ball.png"
+            alt="Animated Soccer Ball"
+            width={500}
+            height={300}
+            className="absolute "
+          />
         </section>
       </main>
       <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10"></div>
