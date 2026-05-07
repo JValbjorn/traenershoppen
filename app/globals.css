@@ -57,3 +57,10 @@ body {
   color: var(--color-foreground);
   /* font-family: hanken-grotesk, -apple-system, BlinkMacSystemFont, sans-serif; */
 }
+.cls-1{
+  fill: var(--dark_green);
+}
+
+.cls-2{
+  fill: var(--green);
+}

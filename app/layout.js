@@ -18,10 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="da" className={`${HankenSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-       <Header /> 
-       {children}
-       <Footer />
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
