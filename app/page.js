@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <main className="relative overflow-hidden">
-      <div>
+      <section>
         <Fan />
         <Image
           src="/img/hero-soccer-ball.png"
@@ -35,16 +35,16 @@ export default function Home() {
           height={150}
           className="absolute top-[5%] right-[10%] w-1/10"
         />
-      </div>
-      <section className="flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
-        <section className="relative w-full flex flex-row items-center justify-around shrink text-center  sm:items-start sm:text-left ">
-          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
+        <div className="relative w-full flex md:flex-row flex-col 2xl:mt-[45vh] xl:mt-[40vh] lg:mt-[30vh] md:mt-[23vh] items-center justify-around shrink text-center">
+          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")}/>
           <CTAButton
             text="Håndbold"
             onClick={() => router.push("/haandbold")}
           />
           <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
-        </section>
+        </div>
+      </section>
+      <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
         <section className="w-full h-250 z-2 relative">
           <div>
             <HomePageArch />

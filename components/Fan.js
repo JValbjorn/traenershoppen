@@ -6,7 +6,7 @@ export default function Fan() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1687.12 1385.24"
-      className="absolute xl:top-[-15%] xl:flex lg:top-[-12%] lg:flex md:top-[-10%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden"
+      className="absolute xl:top-[-16%] xl:flex lg:top-[-15%] lg:flex md:top-[-12%] md:flex z-0 w-[120vw] left-[-9.5vw] h-auto hidden"
     >
       {/* Definerer patterns for images - "baggrundsbilleder" i hver path*/}
       <defs>
