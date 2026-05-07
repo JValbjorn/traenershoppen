@@ -1,11 +1,14 @@
 "use client";
 import { motion } from "motion/react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import CTAButton from "@/components/CTAButton";
 import Fan from "@/components/Fan";
 import AnimatedImage from "@/components/AnimatedImage";
 
 export default function Home() {
+  const router = useRouter();
+  
   return (
     <section className="relative">
       <div>
@@ -34,15 +37,12 @@ export default function Home() {
       </div>
       <main className="flex flex-1 w-full flex-col items-center justify-between pt-100 pb-32 px-16 font-sans bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
         <section className="relative w-full flex flex-row items-center justify-center gap-40 text-center  sm:items-start sm:text-left ">
-          <CTAButton
-            text="Fodbold"
-            onClick={() => console.log("Fodbold clicked")}
-          />
+          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
             text="Håndbold"
-            onClick={() => console.log("Håndbold clicked")}
+            onClick={() => router.push("/haandbold")}
           />
-          <CTAButton text="Tøj" onClick={() => console.log("Tøj clicked")} />
+          <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
         </section>
         <section className=" z-2 relative">
           {/* <AnimatedImage /> */}
