@@ -36,7 +36,7 @@ export default function Home() {
           className="absolute top-[5%] right-[10%] w-1/10"
         />
       </div>
-      <section className="flex flex-1 w-full flex-col items-center justify-between pt-100 pb-32 px-16 font-sans bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
+      <section className="flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
         <section className="relative w-full flex flex-row items-center justify-around shrink text-center  sm:items-start sm:text-left ">
           <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
@@ -55,7 +55,7 @@ export default function Home() {
             alt="Animated Soccer Ball"
             width={800}
             height={800}
-            className="absolute top-[20%] right-[-15%] w-1/2"
+            className="absolute top-[20%] right-[-15%] w-1/2 2xl:top-[22%] xl:top-[20%] lg:top-[10%] md:top-[0%]"
           />
         </section>
       </section>
