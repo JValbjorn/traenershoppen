@@ -1,29 +1,32 @@
-"use client";
-
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import image from "next/image";
 
 export default function NotFound() {
-  const router = useRouter();
-
+  console.log("404 - er loadet, it works!");
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <div>
-        <img src="/offsite.png" alt="Off-site" className="w-64 mb-8" />
+        <Image
+          src="/images/offsite.png"
+          alt="Off-site illustration"
+          width={300}
+          height={300}
+        />
       </div>
       <div>
-        <h1 className="text-4xl text-black font-bold mb-4">OFF-SITE!</h1>
-        <p className="text-lg text-black-600">
+        <h1 className="text-4xl text-gray-900 font-bold mb-4">OFF-SITE!</h1>
+        <p className="text-lg text-gray-600">
           Vi beklager, men denne sidde er ikke klar til at komme på banen endnu
         </p>
-        <p className="text-lg text-black-600">
+        <p className="text-lg text-gray-600">
           Vi gør vores bedste for at blive kampklar hurtigst muligt
         </p>
-        <button
-          onClick={() => router.back()}
-          className="mt-6 px-4 py-2 bg-orange text-black hover:bg-black hover:text-orange transition duration-300"
+        <Link
+          href="/"
+          className="mt-6 px-4 py-2 bg-orange-500 text-white hover:bg-orange-600 transition duration-300 inline-block"
         >
-          Tilbage til forrige side
-        </button>
+          Tilbage til forsiden
+        </Link>
       </div>
     </div>
   );
