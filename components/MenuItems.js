@@ -109,7 +109,8 @@ export default function MenuItems() {
   const [activeItem, setActiveItem] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSections, setOpenSections] = useState({});
-  const [headerHeight, setHeaderHeight] = useState(80);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const closeTimer = useRef(null);
 
   const toggleSection = (itemTitle, sectionTitle) => {
@@ -121,6 +122,7 @@ export default function MenuItems() {
   };
 
   useEffect(() => {
+    setMounted(true);
     const updateHeight = () => {
       const header = document.querySelector("header");
       if (header) {
@@ -216,7 +218,7 @@ export default function MenuItems() {
                     ? "opacity-100 pointer-events-auto translate-y-0"
                     : "opacity-0 pointer-events-none -translate-y-2"
                 }}`}
-                style={{ top: `${headerHeight}px` }}
+                style={mounted ? { top: `${headerHeight}px` } : {}}
               >
                 <div className="mx-auto max-w-7xl px-6 py-8 flex align-middle justify-center">
                   {item.sections ? (
@@ -268,10 +270,14 @@ export default function MenuItems() {
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"
         }`}
-        style={{
-          top: `${headerHeight}px`,
-          height: `calc(100vh - ${headerHeight}px)`,
-        }}
+        style={
+          mounted
+            ? {
+                top: `${headerHeight}px`,
+                height: `calc(100vh - ${headerHeight}px)`,
+              }
+            : {}
+        }
       >
         <div className="mt-6 space-y-8">
           {navItems.map((item) => (
