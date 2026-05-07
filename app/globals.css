@@ -30,7 +30,6 @@
   --color-extra-light-green: var(--extra_light_green);
   --color-background: var(--light_gray);
   --color-foreground: var(--black);
-  --font-sans: var(--font-hanken-sans);
 }
 
 @layer base {
@@ -42,6 +41,10 @@
     font-family: "molend";
     background-color: var(--orange);
     font-size: 1.5rem;
+  }
+  h3{
+    font-size: 1.25rem;
+    background-color: var(--light_green);
   }
 }
 
