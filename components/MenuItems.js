@@ -177,7 +177,7 @@ export default function MenuItems() {
         >
           <span
             className={`block h-0.5 w-6 transform bg-white transition duration-200 ${
-              mobileOpen ? "translate-y-1.5 rotate-45" : "-translate-y-1"
+              mobileOpen ? "translate-y-0.4 rotate-45" : "-translate-y-1"
             }`}
           />
           <span
@@ -187,7 +187,7 @@ export default function MenuItems() {
           />
           <span
             className={`block h-0.5 w-6 transform bg-white transition duration-200 ${
-              mobileOpen ? "-translate-y-1.5 -rotate-45" : "translate-y-1"
+              mobileOpen ? "-translate-y-0.4 -rotate-45" : "translate-y-1"
             }`}
           />
         </button>
