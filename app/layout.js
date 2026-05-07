@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da" className={`${HankenSans.variable} h-full antialiased`}>
       <body
-        className="min-h-full flex flex-col"
+        className="min-h-full flex flex-col overflow-x-hidden"
         suppressHydrationWarning={true}
       >
         <Header />
