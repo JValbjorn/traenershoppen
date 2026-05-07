@@ -11,9 +11,11 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <main className="relative overflow-hidden">
-      <section>
+    <main className="relative overflow-hidden flex flex-col">
+      <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
         <Fan />
+      </div>
+      <section>
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Fodbold"
@@ -36,7 +38,7 @@ export default function Home() {
           className="absolute top-[5%] right-[10%] w-1/10"
         />
         <div className="relative w-full flex md:flex-row flex-col 2xl:mt-[45vh] xl:mt-[40vh] lg:mt-[30vh] md:mt-[23vh] items-center justify-around shrink text-center">
-          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")}/>
+          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
             text="Håndbold"
             onClick={() => router.push("/haandbold")}
@@ -45,7 +47,7 @@ export default function Home() {
         </div>
       </section>
       <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
-        <section className="w-full h-250 z-2 relative">
+        <section className="w-full h-250 z-2 relative flex flex-row">
           <div>
             <HomePageArch />
           </div>
@@ -55,7 +57,7 @@ export default function Home() {
             alt="Animated Soccer Ball"
             width={800}
             height={800}
-            className="absolute top-[20%] right-[-15%] w-1/2 2xl:top-[22%] xl:top-[20%] lg:top-[10%] md:top-[0%]"
+            className="absolute right-[-15%] 2xl:top-[10%] xl:top-[23%] lg:top-[15%] md:top-[10%] w-1/2 "
           />
         </section>
       </section>
