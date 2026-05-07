@@ -1,0 +1,11 @@
+export default function HomePageArch() {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1687.12 3346.12">
+        <g id="arch">
+          <path
+            className="cls-5 fill-white absolute top-0 left-0 w-full h-auto"
+            d="M705.82,1236.49c-62.06-180.15-243.13-297.13-424.97-323.44-56.82-8.22-121.3-7.86-121.29-4.49,0,0,1,674.51,1,674.51l572.46-203.26c-2.41-49.59-11.33-97.3-27.2-143.33Z"
+          />
+        </g>
+      </svg>
+    );}

@@ -30,8 +30,8 @@ export default function Footer() {
           src="/img/pift.png"
           alt="Trænershoppen - tilbage til forsiden"
           className="justify-self-center"
-          width="70"
-          height="100"
+          width={70}
+          height={70}
         />
       </Link>
     </footer>

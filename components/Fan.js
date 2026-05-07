@@ -6,7 +6,7 @@ export default function Fan() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1687.12 1385.24"
-      className="absolute top-[-45vh] z-0 w-[120vw] left-[-10vw] h-auto"
+      className="absolute xl:top-[-15%] xl:flex lg:top-[-12%] lg:flex md:top-[-10%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden"
     >
       {/* Definerer patterns for images - "baggrundsbilleder" i hver path*/}
       <defs>
@@ -86,6 +86,20 @@ export default function Fan() {
           animate={{ rotate: 0, opacity: 1, scale: 1, translateY: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
           style={{ transformOrigin: "bottom center" }}
+        />
+      </g>
+      <g id="line">
+        <polyline
+          class="cls-3"
+          points="834.78 1385.05 834.78 1440.57 309.82 1626.08 309.82 1884.78 1379.94 2151.05 1379.94 2466.53 308.56 2672.22 308.56 3346.1"
+        />
+        <polyline
+          class="cls-2"
+          points="802.07 1385.07 802.07 1417.67 277.1 1602.93 277.1 1909.06 1347.23 2176.72 1347.23 2439.97 275.84 2644.9 275.84 3346.12"
+        />
+        <polyline
+          class="cls-2"
+          points="867.53 1385.07 867.53 1463.81 342.56 1649.12 342.56 1860.41 1412.68 2125.26 1412.68 2493.9 341.3 2697.92 341.3 3346.12"
         />
       </g>
     </svg>
