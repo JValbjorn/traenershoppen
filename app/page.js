@@ -1,61 +1,60 @@
 "use client";
-import { motion } from "motion/react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import CTAButton from "@/components/CTAButton";
 import Fan from "@/components/Fan";
-import AnimatedImage from "@/components/AnimatedImage";
+import HomePageArch from "@/components/HomePageArch";
+import HomePageImage from "@/components/HomePageImage";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
-    <section className="relative">
-      <div>
+    <main className="relative overflow-hidden flex flex-col h-500">
+      <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
         <Fan />
+      </div>
+      <section className="flex justify-center 2xl:mt-[50vh] xl:mt-[42vh] lg:mt-[35vh] md:mt-[25vh]">
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Fodbold"
           width={150}
-          height={100}
-          className="absolute top-[5%] left-[10%]"
+          height={150}
+          className="absolute top-[9%] left-[10%] w-1/10"
         />
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Håndbold"
           width={150}
-          height={100}
-          className="absolute top-[2%] left-[50%] translate-x-[-50%]"
+          height={150}
+          className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
         />
         <Image
           src="/img/hero-soccer-ball.png"
           alt="Tøj"
           width={150}
-          height={100}
-          className="absolute top-[5%] right-[10%]"
+          height={150}
+          className="absolute top-[9%] right-[10%] w-1/10"
         />
-      </div>
-      <main className="flex flex-1 w-full flex-col items-center justify-between pt-100 pb-32 px-16 font-sans bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
-        <section className="relative w-full flex flex-row items-center justify-center gap-40 text-center  sm:items-start sm:text-left ">
-          <CTAButton
-            text="Fodbold"
-            onClick={() => console.log("Fodbold clicked")}
-          />
+        <div className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center">
+          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
             text="Håndbold"
-            onClick={() => console.log("Håndbold clicked")}
+            onClick={() => router.push("/haandbold")}
           />
-          <CTAButton text="Tøj" onClick={() => console.log("Tøj clicked")} />
+          <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
+        </div>
+      </section>
+      <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
+        <section className="w-full h-250 z-2 relative flex">
+          <HomePageArch />
+          <HomePageImage />
         </section>
-        <section className=" z-2 relative">
-          {/* <AnimatedImage /> */}
-          <Image
-            src="/img/hero-soccer-ball.png"
-            alt="Animated Soccer Ball"
-            width={500}
-            height={300}
-            className="absolute "
-          />
-        </section>
-      </main>
-      <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10"></div>
-    </section>
+      </section>
+     <section>
+      <h2>POPULÆRE KATEGORIER</h2>
+      <div></div>
+     </section>
+    </main>
   );
 }
