@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import CTAButton from "@/components/CTAButton";
 
 export default function NotFound() {
   const router = useRouter();
@@ -19,20 +20,17 @@ export default function NotFound() {
         />
       </div>
       <div className="flex flex-col items-center text-center max-w-[75vw] md:items-start md:text-left md:max-w-xl">
-        <h1 className="text-4xl text-gray-900 font-bold mb-4">OFF-SITE!</h1>
-        <p className="text-lg text-gray-600">
+        <h1 className="text-4xl text-black font-bold mb-4">OFF-SITE!</h1>
+        <p className="text-lg text-black mb-1">
           Vi beklager, men denne sidde er ikke klar til at komme på banen endnu
         </p>
-        <p className="text-lg text-gray-600 mt-2">
+        <p className="text-lg text-black mt-1 mb-4">
           Vi gør vores bedste for at blive kampklar hurtigst muligt
         </p>
-        <button
-          type="button"
+        <CTAButton
+          text="Tilbage til forrige side"
           onClick={() => router.back()}
-          className="mt-6 px-4 py-2 bg-orange-500 text-white hover:bg-orange-600 transition duration-300 inline-block"
-        >
-          Tilbage til forrige side
-        </button>
+        />
       </div>
     </div>
   );

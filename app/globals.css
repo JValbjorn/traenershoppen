@@ -35,7 +35,6 @@
 @layer base {
   h1 {
     font-family: "molend";
-    background-color: var(--shaded_green);
   }
   h2 {
     font-family: "molend";
