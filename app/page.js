@@ -47,9 +47,10 @@ export default function Home() {
       </section>
       <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
         <section className="w-full h-250 z-2 relative flex">
-          <motion.div className="cls-5 fill-white w-3/7 h-auto absolute -left-10 2xl:top-[10%] xl:top-[23%] lg:top-[15%] md:top-[10%]">
+          {/* <motion.div className="cls-5 fill-white w-3/7 h-auto absolute -left-10 2xl:top-[10%] xl:top-[23%] lg:top-[15%] md:top-[10%]">
             <HomePageArch />
-          </motion.div>
+          </motion.div> */}
+          <HomePageArch />
           <motion.div
             initial={{ opacity: 0, translateY: 50 }}
             animate={{ opacity: 1, translateY: 0 }}
