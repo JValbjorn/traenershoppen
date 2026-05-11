@@ -5,7 +5,6 @@ import Image from "next/image";
 import CTAButton from "@/components/CTAButton";
 import Fan from "@/components/Fan";
 import HomePageArch from "@/components/HomePageArch";
-import AnimatedImage from "@/components/AnimatedImage";
 
 export default function Home() {
   const router = useRouter();
@@ -48,17 +47,22 @@ export default function Home() {
       </section>
       <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
         <section className="w-full h-250 z-2 relative flex">
-          <div className="cls-5 fill-white w-full h-auto" >
-            <HomePageArch/>
+          <div className="cls-5 fill-white w-full h-auto absolute top-0">
+            <HomePageArch />
           </div>
-          {/* <AnimatedImage /> */}
-          <Image
-            src="/img/hero-soccer-ball.png"
-            alt="Animated Soccer Ball"
-            width={800}
-            height={800}
-            className="absolute right-[-15%] 2xl:top-[10%] xl:top-[23%] lg:top-[15%] md:top-[10%] w-1/2 "
-          />
+          <motion.div
+            initial={{ opacity: 0, translateY: 2500 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
+          >
+            <Image
+              src="/img/hero-soccer-ball.png"
+              alt="Animated Soccer Ball"
+              width={800}
+              height={800}
+              className="absolute right-[-15%] 2xl:top-[10%] xl:top-[23%] lg:top-[15%] md:top-[10%] w-1/2 "
+            />
+          </motion.div>
         </section>
       </section>
       <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10"></div>
