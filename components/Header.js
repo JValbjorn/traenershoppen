@@ -19,6 +19,20 @@ export default function Header() {
         </article>
       </Link>
       <MenuItems />
+      <Image
+      src="/img/pift.png"
+      alt="Search Icon"
+      width={30}
+      height={30}
+      className="ml-4 cursor-pointer"
+    />
+     <Image
+      src="/img/pift.png"
+      alt="Cart Icon"
+      width={30}
+      height={30}
+      className="ml-4 cursor-pointer"
+    />
     </header>
   );
 }
