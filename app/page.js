@@ -45,7 +45,7 @@ export default function Home() {
           <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
         </div>
       </section>
-      <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
+      <section className="relative flex flex-1 w-full flex-col items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
         <section className="w-full h-250 z-2 relative flex">
           <HomePageArch />
           <HomePageImage />
