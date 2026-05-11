@@ -9,7 +9,7 @@ export default function HomeImage() {
       initial={{ opacity: 0, translateY: 50 }}
       whileInView={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       <Image
         src="/img/hero-soccer-ball.png"

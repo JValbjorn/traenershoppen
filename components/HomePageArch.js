@@ -13,7 +13,7 @@ export default function HomePageArch() {
       initial={{ opacity: 0, translateY: 50 }}
       whileInView={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
       <div className="flex flex-col p-3 pl-10 justify-between min-h-100">
         <h2 className="text-3xl font-bold text-var(--dark_green) mt-4 w-2/3">

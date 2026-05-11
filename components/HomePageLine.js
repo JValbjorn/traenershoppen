@@ -1,17 +1,18 @@
-export default function HomePageArch() {
+export default function HomePageLine() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1687.12 3346.12">
       <g id="line">
         <polyline
-          class="cls-3"
+          className="cls-3"
+          fill="var(--dark_green)"
           points="834.78 1385.05 834.78 1440.57 309.82 1626.08 309.82 1884.78 1379.94 2151.05 1379.94 2466.53 308.56 2672.22 308.56 3346.1"
         />
         <polyline
-          class="cls-2"
+          className="cls-2"
           points="802.07 1385.07 802.07 1417.67 277.1 1602.93 277.1 1909.06 1347.23 2176.72 1347.23 2439.97 275.84 2644.9 275.84 3346.12"
         />
         <polyline
-          class="cls-2"
+          className="cls-2"
           points="867.53 1385.07 867.53 1463.81 342.56 1649.12 342.56 1860.41 1412.68 2125.26 1412.68 2493.9 341.3 2697.92 341.3 3346.12"
         />
       </g>
