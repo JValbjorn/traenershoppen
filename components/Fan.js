@@ -1,7 +1,20 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 export default function Fan() {
+  const { scrollYProgress } = useScroll();
+
+  // const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  // // Beregn offset for at sikre, at path'ens ende er 40px fra bunden
+  // const offsetPathLength = useTransform(pathLength, (value) => {
+  //   const viewportHeight = window.innerHeight;
+  //   const pathEndOffset = 40 / viewportHeight; // 40px som en procentdel af viewportens højde
+  //   return Math.min(value, 1 - pathEndOffset); // Begræns pathLength, så den stopper før bunden
+  // });
+
+  
+
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1687.12 3333.36">
       {/* Definerer patterns for images - "baggrundsbilleder" i hver path*/}
@@ -89,13 +102,13 @@ export default function Fan() {
           className="cls-3"
           d="M835.46 1385.24 835.46 1510.2 312.53 1695.71 312.53 1953.82 1381.25 2224.02 1381.25 2541.28 308.5 2745.61 311.5 3423.14"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
+          animate={{ pathLength: scrollYProgress }}
         />
         <motion.path
           className="cls-4"
           d="M834.77 1383.05 834.77 1510.2 311.84 1695.71 311.84 1953.82 1380.56 2224.02 1380.56 2541.28 307.8 2745.61 310.8 3423.14"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
+          animate={{ pathLength: scrollYProgress }}
         />
       </g>
     </svg>
