@@ -5,8 +5,9 @@ export default function HomePageArch() {
     <motion.div
       className="cls-5 fill-white w-3/7 h-auto absolute -left-10 2xl:top-[10%] xl:top-[23%] lg:top-[15%] md:top-[10%]"
       initial={{ opacity: 0, translateY: 50 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      transition={{ delay: 1, duration: 0.8, ease: "easeInOut" }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      viewport={{ once: true}}
     >
       <svg
         id="arch"
