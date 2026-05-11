@@ -51,7 +51,10 @@ export default function Home() {
           <HomePageImage />
         </section>
       </section>
-      <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray) h-250 z-10"></div>
+     <section>
+      <h2>POPULÆRE KATEGORIER</h2>
+      <div></div>
+     </section>
     </main>
   );
 }
