@@ -3,11 +3,7 @@ import { motion } from "motion/react";
 
 export default function Fan() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1687.12 1385.24"
-      // className="absolute xl:top-[-16%] xl:flex lg:top-[-15%] lg:flex md:top-[-12%] md:flex z-0 w-[120vw] left-[-9.5vw] h-auto hidden"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1687.12 3333.36">
       {/* Definerer patterns for images - "baggrundsbilleder" i hver path*/}
       <defs>
         <pattern
@@ -88,18 +84,14 @@ export default function Fan() {
           style={{ transformOrigin: "bottom center" }}
         />
       </g>
-      <g id="line">
+      <g id="Line">
+        <polyline
+          className="cls-4"
+          points="835.46 1385.25 835.46 1420.2 312.53 1605.71 312.53 1863.82 1381.25 2134.02 1381.25 2451.28 308.5 2655.61 311.5 3333.14"
+        />
         <polyline
           className="cls-3"
-          points="834.78 1385.05 834.78 1440.57 309.82 1626.08 309.82 1884.78 1379.94 2151.05 1379.94 2466.53 308.56 2672.22 308.56 3346.1"
-        />
-        <polyline
-          className="cls-2"
-          points="802.07 1385.07 802.07 1417.67 277.1 1602.93 277.1 1909.06 1347.23 2176.72 1347.23 2439.97 275.84 2644.9 275.84 3346.12"
-        />
-        <polyline
-          className="cls-2"
-          points="867.53 1385.07 867.53 1463.81 342.56 1649.12 342.56 1860.41 1412.68 2125.26 1412.68 2493.9 341.3 2697.92 341.3 3346.12"
+          points="834.77 1385.25 834.77 1420.2 311.84 1605.71 311.84 1863.82 1380.56 2134.02 1380.56 2451.28 307.8 2655.61 310.8 3333.14"
         />
       </g>
     </svg>

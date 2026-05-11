@@ -66,3 +66,13 @@ body {
 .cls-2{
   fill: var(--shaded_green);
 }
+
+.cls-3{
+     stroke: var(--dark_green);
+        stroke-width: 100px;
+}
+
+.cls-4{
+     stroke: var(--shaded_green);
+        stroke-width: 30px;
+}
