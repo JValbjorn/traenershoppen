@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <main className="relative overflow-hidden flex flex-col h-500">
+    <main className="relative overflow-hidden flex flex-col">
       <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
         <Fan />
       </div>
@@ -45,12 +45,12 @@ export default function Home() {
           <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
         </div>
       </section>
-      <section className="relative flex flex-1 w-full flex-col items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
-        <section className="w-full h-220 z-2 relative flex">
+      <section className="relative grid grid-cols-3 grid-auto-rows gap-60 w-full items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
+        <section className="col-span-3 h-220 z-2 relative flex">
           <HomePageArch />
           <HomePageImage />
         </section>
-        <section className="flex flex-col w-full">
+        <section className="col-span-2 col-start-2 flex flex-col w-full">
           <h2>POPULÆRE KATEGORIER</h2>
           <div className="flex flex-row justify-around w-full">
             <div className="bg-light-green w-25 h-10"></div>
@@ -59,7 +59,7 @@ export default function Home() {
             <div className="bg-light-green w-25 h-10"></div>
           </div>
         </section>
-        <section className="flex flex-col w-full">
+        <section className="flex flex-col w-full col-span-2 col-start-1">
           <h2>BESTSELLERS</h2>
           <div className="flex flex-row justify-around w-full">
             <div className="bg-light-green w-25 h-10"></div>
