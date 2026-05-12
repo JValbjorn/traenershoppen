@@ -5,6 +5,7 @@ import CTAButton from "@/components/CTAButton";
 import Fan from "@/components/Fan";
 import HomePageArch from "@/components/HomePageArch";
 import HomePageImage from "@/components/HomePageImage";
+import Parallellogram from "../components/Parallellogram";
 
 export default function Home() {
   const router = useRouter();
@@ -53,7 +54,7 @@ export default function Home() {
         <section className="col-span-2 col-start-2 flex flex-col w-full">
           <h2>POPULÆRE KATEGORIER</h2>
           <div className="flex flex-row justify-around w-full">
-            <div className="bg-light-green w-25 h-10"></div>
+          <Parallellogram text="Fodbolde" onClick={()=> router.push("/fodbold/bolde")}/>
             <div className="bg-light-green w-25 h-10"></div>
             <div className="bg-light-green w-25 h-10"></div>
             <div className="bg-light-green w-25 h-10"></div>
