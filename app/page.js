@@ -58,10 +58,10 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center"
+          className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center z-3"
           initial={{ opacity: 0, translateY: 50 }}
           animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 1, duration: 0.5, ease: "easeInOut" }}
+          transition={{ delay: 0.9, duration: 0.3, ease: "easeInOut" }}
         >
           <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
