@@ -52,16 +52,32 @@ export default function Home() {
           <HomePageImage />
         </section>
         <section className="col-span-2 col-start-2 flex flex-col w-full">
-          <h2>POPULÆRE KATEGORIER</h2>
+          <h2 className="text-4xl">POPULÆRE KATEGORIER</h2>
           <div className="flex flex-row justify-around w-full">
-          <Parallellogram text="Fodbolde" onClick={()=> router.push("/fodbold/bolde")}/>
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
+            <Parallellogram
+              text="Fodbolde"
+              onClick={() => router.push("/fodbold/bolde")}
+            />
+            <Parallellogram
+              text="Fodbolde"
+              onClick={() => router.push("/fodbold/bolde")}
+            />{" "}
+            <Parallellogram
+              text="Fodbolde"
+              onClick={() => router.push("/fodbold/bolde")}
+            />{" "}
+            <Parallellogram
+              text="Fodbolde"
+              onClick={() => router.push("/fodbold/bolde")}
+            />{" "}
+            <Parallellogram
+              text="Fodbolde"
+              onClick={() => router.push("/fodbold/bolde")}
+            />
           </div>
         </section>
         <section className="flex flex-col w-full col-span-2 col-start-1">
-          <h2>BESTSELLERS</h2>
+          <h2 className="text-4xl">BESTSELLERS</h2>
           <div className="flex flex-row justify-around w-full">
             <div className="bg-light-green w-25 h-10"></div>
             <div className="bg-light-green w-25 h-10"></div>
