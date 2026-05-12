@@ -62,12 +62,12 @@ export default function Home() {
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.9, duration: 0.3, ease: "easeInOut" }}
         >
-          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
+          <CTAButton text="Fodbold" path="/fodbold" />
           <CTAButton
             text="Håndbold"
-            onClick={() => router.push("/haandbold")}
+           path="/haandbold"
           />
-          <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
+          <CTAButton text="Tøj" path="toej" />
         </motion.div>
       </section>
       <section className="relative grid grid-cols-3 grid-auto-rows gap-55 w-full items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
