@@ -35,14 +35,31 @@
 
 @layer base {
   h1 {
+    font-size: 1.5 rem;
     font-family: "molend";
-    background-color: var(--shaded_green);
   }
   h2 {
     font-family: "molend";
     background-color: var(--orange);
-    font-size: 1.5rem;
+    font-size: 1 rem;
   }
+<<<<<<< Updated upstream
+=======
+  h3{
+    font-size: 1.25 rem;
+    font-weight: 500;
+    background-color: var(--light_green);
+  }
+
+  form input {
+  border: 2px solid var(--black);
+  background-image: url("/public/img/forms-test.png");
+  height: 2.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: transparent;
+}
+>>>>>>> Stashed changes
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,3 +74,13 @@ body {
   color: var(--color-foreground);
   /* font-family: hanken-grotesk, -apple-system, BlinkMacSystemFont, sans-serif; */
 }
+<<<<<<< Updated upstream
+=======
+.cls-1{
+  fill: var(--dark_green);
+}
+
+.cls-2{
+  fill: var(--green);
+}
+>>>>>>> Stashed changes
