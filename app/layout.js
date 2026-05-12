@@ -9,7 +9,6 @@ const HankenSans = Hanken_Grotesk({
   subsets: ["latin"],
 });
 
-
 export const metadata = {
   title: "Trænershoppen",
   description: "Sportsudstyr til din klub",
@@ -18,19 +17,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="da" className={`${HankenSans.variable} h-full antialiased`}>
-<<<<<<< Updated upstream
-      <body className="min-h-full flex flex-col">
-       <Header /> 
-       {children}
-       <Footer />
-=======
-      <body className="min-h-full flex flex-col overflow-x-hidden">
+      <body
+        className="min-h-full flex flex-col overflow-x-hidden"
+        suppressHydrationWarning={true}
+      >
         <Header />
-        <div className="padding-x-60">
         {children}
-        </div>
         <Footer />
->>>>>>> Stashed changes
       </body>
     </html>
   );

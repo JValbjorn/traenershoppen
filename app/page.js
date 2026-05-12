@@ -1,68 +1,60 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Footer from "@/components/Footer";
+import CTAButton from "@/components/CTAButton";
+import Fan from "@/components/Fan";
+import HomePageArch from "@/components/HomePageArch";
+import HomePageImage from "@/components/HomePageImage";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-var(--light_gray) font-sans dark:bg-var(--light-gray)">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-var(--light_gray) dark:var(--light-gray) sm:items-start">
+    <main className="relative overflow-hidden flex flex-col h-500">
+      <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
+        <Fan />
+      </div>
+      <section className="flex justify-center 2xl:mt-[50vh] xl:mt-[42vh] lg:mt-[35vh] md:mt-[25vh]">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src="/img/hero-soccer-ball.png"
+          alt="Fodbold"
+          width={150}
+          height={150}
+          className="absolute top-[9%] left-[10%] w-1/10"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className=" max-w-xs text-3xl font-semibold leading-10 tracking-tight">
-            To get started, edit the page.js file. Hallo
-          </h1>
-          <h2>This is a test</h2>
-          <h3>This is also a test</h3>
-          <p className="max-w-md text-lg leading-8 ">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium  "
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium "
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <Image
+          src="/img/hero-soccer-ball.png"
+          alt="Håndbold"
+          width={150}
+          height={150}
+          className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
+        />
+        <Image
+          src="/img/hero-soccer-ball.png"
+          alt="Tøj"
+          width={150}
+          height={150}
+          className="absolute top-[9%] right-[10%] w-1/10"
+        />
+        <div className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center">
+          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
+          <CTAButton
+            text="Håndbold"
+            onClick={() => router.push("/haandbold")}
+          />
+          <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-158px"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/.08 px-5 transition-colors hover:border-transparent hover:bg-black/.04 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-158px"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+      <section className="relative flex flex-1 w-full flex-col items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
+        <section className="w-full h-250 z-2 relative flex">
+          <HomePageArch />
+          <HomePageImage />
+        </section>
+      </section>
+     <section>
+      <h2>POPULÆRE KATEGORIER</h2>
+      <div></div>
+     </section>
+    </main>
   );
 }
