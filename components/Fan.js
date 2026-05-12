@@ -103,13 +103,15 @@ export default function Fan() {
           className="cls-3"
           d="M835.46 1385.24 835.46 1510.2 312.53 1695.71 312.53 1953.82 1381.25 2224.02 1381.25 2541.28 308.5 2745.61 311.5 3423.14"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: offsetPathLength }}
+          animate={{ pathLength: 1 }}
+          transition={{ delay: 0.3, duration: 5, ease: "easeInOut" }}
         />
         <motion.path
           className="cls-4"
           d="M834.77 1383.05 834.77 1510.2 311.84 1695.71 311.84 1953.82 1380.56 2224.02 1380.56 2541.28 307.8 2745.61 310.8 3423.14"
           initial={{ pathLength: 0 }}
-          animate={{ pathLength: offsetPathLength}}
+          animate={{ pathLength: 1 }}
+          transition={{ delay: 0.3, duration: 5, ease: "easeInOut" }}
         />
       </g>
     </svg>
