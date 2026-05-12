@@ -7,7 +7,7 @@ export default function Header() {
     <header className="relative z-100 bg-dark-green py-4 px-6 flex items-center justify-between w-full">
       <Link href="/" className="flex flex-row">
         <Image
-          src="/img/pift.png"
+          src="/img/logo-white.png"
           alt="Trænershoppen Logo"
           width={30}
           height={30}
