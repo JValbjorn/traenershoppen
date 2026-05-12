@@ -82,7 +82,7 @@ export default function Fan() {
           fill="var(--shaded_green)"
           initial={{ rotate: 0, opacity: 0, scale: 0.8, translateY: 1500 }}
           animate={{ rotate: 0, opacity: 1, scale: 1, translateY: 0 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
+          transition={{ delay: 0.1, duration: 0.8, ease: "easeInOut" }}
           style={{ transformOrigin: "bottom center" }}
         />
       </g>
@@ -94,7 +94,7 @@ export default function Fan() {
           fill="var(--dark_green)"
           initial={{ rotate: -200, opacity: 0, scale: 0.8, translateY: 1500 }}
           animate={{ rotate: 0, opacity: 1, scale: 1, translateY: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
           style={{ transformOrigin: "bottom center" }}
         />
       </g>

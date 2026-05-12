@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { motion } from "motion/react";
 import Image from "next/image";
 import CTAButton from "@/components/CTAButton";
 import Fan from "@/components/Fan";
@@ -16,35 +17,59 @@ export default function Home() {
         <Fan />
       </div>
       <section className="flex justify-center 2xl:mt-[50vh] xl:mt-[42vh] lg:mt-[35vh] md:mt-[25vh]">
-        <Image
-          src="/img/hero-soccer-ball.png"
-          alt="Fodbold"
-          width={150}
-          height={150}
+        <motion.div
           className="absolute top-[9%] left-[10%] w-1/10"
-        />
-        <Image
-          src="/img/hero-soccer-ball.png"
-          alt="Håndbold"
-          width={150}
-          height={150}
+          initial={{ opacity: 0, translateY: 50 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+        >
+          <Image
+            src="/img/hero-soccer-ball.png"
+            alt="Fodbold"
+            width={150}
+            height={150}
+          />
+        </motion.div>
+        <motion.div
           className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
-        />
-        <Image
-          src="/img/hero-soccer-ball.png"
-          alt="Tøj"
-          width={150}
-          height={150}
+          initial={{ opacity: 0, translateY: 50 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+        >
+          <Image
+            src="/img/hero-soccer-ball.png"
+            alt="Håndbold"
+            width={150}
+            height={150}
+          />
+        </motion.div>
+        <motion.div
           className="absolute top-[9%] right-[10%] w-1/10"
-        />
-        <div className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center">
+          initial={{ opacity: 0, translateY: 50 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+        >
+          <Image
+            src="/img/hero-soccer-ball.png"
+            alt="Tøj"
+            width={150}
+            height={150}
+          />
+        </motion.div>
+
+        <motion.div
+          className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center"
+          initial={{ opacity: 0, translateY: 50 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+        >
           <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
             text="Håndbold"
             onClick={() => router.push("/haandbold")}
           />
           <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
-        </div>
+        </motion.div>
       </section>
       <section className="relative grid grid-cols-3 grid-auto-rows gap-60 w-full items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
         <section className="col-span-3 h-220 z-2 relative flex">

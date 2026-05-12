@@ -1,14 +1,21 @@
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function Parallellogram({text, onClick}) {
     const [isHovering, setIsHovering] = useState(false);
 
     
     return (
-      <div className="grid grid-rows-2 grid-cols-4 min-h-20"
-      onMouseEnter={()=> setIsHovering(true)}
-      onMouseLeave={()=> setIsHovering(false)}>
+      <motion.div
+        className="grid grid-rows-2 grid-cols-4 min-h-20"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        initial={{ opacity: 0, translateY: 50 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+      >
         {isHovering && (
           <Image
             src="/img/green-fan.png"
@@ -27,6 +34,6 @@ export default function Parallellogram({text, onClick}) {
             {text}
           </button>
         </div>
-      </div>
+      </motion.div>
     );
 }
