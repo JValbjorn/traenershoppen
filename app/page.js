@@ -7,15 +7,14 @@ import Fan from "@/components/Fan";
 import HomePageArch from "@/components/HomePageArch";
 import HomePageImage from "@/components/HomePageImage";
 import Parallellogram from "../components/Parallellogram";
+import FadeInWrapper from "../components/FadeInWrapper";
 
 export default function Home() {
   const router = useRouter();
 
   return (
-    <main className="relative overflow-hidden flex flex-col">
-      <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
-        <Fan />
-      </div>
+    <main className="relative overflow-hidden flex flex-col pb-[10vh]">
+      <Fan />
       <section className="flex justify-center 2xl:mt-[50vh] xl:mt-[42vh] lg:mt-[35vh] md:mt-[25vh]">
         <motion.div
           className="absolute top-[9%] left-[10%] w-1/10"
@@ -32,8 +31,8 @@ export default function Home() {
         </motion.div>
         <motion.div
           className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
-          initial={{ opacity: 0, translateY: 100}}
-          animate={{ opacity: 1, translateY: 0}}
+          initial={{ opacity: 0, translateY: 100 }}
+          animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
         >
           <Image
@@ -71,12 +70,18 @@ export default function Home() {
           <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
         </motion.div>
       </section>
-      <section className="relative grid grid-cols-3 grid-auto-rows gap-60 w-full items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
-        <section className="col-span-3 h-220 z-2 relative flex">
+      <section className="relative grid grid-cols-3 grid-auto-rows gap-55 w-full items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
+        <FadeInWrapper
+          className="col-span-3 h-220 z-2 relative flex"
+          amount={0.5}
+        >
           <HomePageArch />
           <HomePageImage />
-        </section>
-        <section className="col-span-2 col-start-2 flex flex-col w-full">
+        </FadeInWrapper>
+        <FadeInWrapper
+          className="col-span-2 col-start-2 flex flex-col w-full"
+          amount={0.4}
+        >
           <h2 className="text-4xl">POPULÆRE KATEGORIER</h2>
           <div className="flex flex-row justify-around w-full">
             <Parallellogram
@@ -100,16 +105,19 @@ export default function Home() {
               onClick={() => router.push("/fodbold/bolde")}
             />
           </div>
-        </section>
-        <section className="flex flex-col w-full col-span-2 col-start-1">
+        </FadeInWrapper>
+        <FadeInWrapper
+          className="flex flex-col w-full col-span-2 col-start-1 mt-40"
+          amount={0.4}
+        >
           <h2 className="text-4xl">BESTSELLERS</h2>
-          <div className="flex flex-row justify-around w-full">
+          <div className="flex flex-row justify-between w-full mt-10">
             <div className="bg-light-green w-25 h-10"></div>
             <div className="bg-light-green w-25 h-10"></div>
             <div className="bg-light-green w-25 h-10"></div>
             <div className="bg-light-green w-25 h-10"></div>
           </div>
-        </section>
+        </FadeInWrapper>
       </section>
     </main>
   );

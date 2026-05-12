@@ -11,10 +11,6 @@ export default function Parallellogram({text, onClick}) {
         className="grid grid-rows-2 grid-cols-4 min-h-20"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
-        initial={{ opacity: 0, translateY: 50 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        viewport={{ once: true, amount: 0.4 }}
       >
         {isHovering && (
           <Image
