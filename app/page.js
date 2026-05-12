@@ -19,9 +19,9 @@ export default function Home() {
       <section className="flex justify-center 2xl:mt-[50vh] xl:mt-[42vh] lg:mt-[35vh] md:mt-[25vh]">
         <motion.div
           className="absolute top-[9%] left-[10%] w-1/10"
-          initial={{ opacity: 0, translateY: 50 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+          initial={{ opacity: 0, translateY: 50, translateX: 100 }}
+          animate={{ opacity: 1, translateY: 0, translateX: 0 }}
+          transition={{ delay: 1, duration: 0.3, ease: "easeInOut" }}
         >
           <Image
             src="/img/hero-soccer-ball.png"
@@ -32,9 +32,9 @@ export default function Home() {
         </motion.div>
         <motion.div
           className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
-          initial={{ opacity: 0, translateY: 50 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+          initial={{ opacity: 0, translateY: 50}}
+          animate={{ opacity: 1, translateY: 0}}
+          transition={{ delay: 1, duration: 0.3, ease: "easeInOut" }}
         >
           <Image
             src="/img/hero-soccer-ball.png"
@@ -45,9 +45,9 @@ export default function Home() {
         </motion.div>
         <motion.div
           className="absolute top-[9%] right-[10%] w-1/10"
-          initial={{ opacity: 0, translateY: 50 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+          initial={{ opacity: 0, translateY: 50, translateX: -100 }}
+          animate={{ opacity: 1, translateY: 0, translateX: 0 }}
+          transition={{ delay: 1, duration: 0.3, ease: "easeInOut" }}
         >
           <Image
             src="/img/hero-soccer-ball.png"
@@ -61,7 +61,7 @@ export default function Home() {
           className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center"
           initial={{ opacity: 0, translateY: 50 }}
           animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
+          transition={{ delay: 1, duration: 0.5, ease: "easeInOut" }}
         >
           <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
           <CTAButton
