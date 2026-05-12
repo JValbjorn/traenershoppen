@@ -30,29 +30,29 @@ export default function Home() {
           />
         </motion.div>
         <motion.div
-          className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
+          className="absolute top-[5%] left-[50%] w-1/8 translate-x-[-50%]"
           initial={{ opacity: 0, translateY: 100 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
         >
           <Image
-            src="/img/hero-soccer-ball.png"
+            src="/img/handball.png"
             alt="Håndbold"
-            width={150}
-            height={150}
+            width={190}
+            height={190}
           />
         </motion.div>
         <motion.div
-          className="absolute top-[9%] right-[10%] w-1/10"
+          className="absolute top-[7%] right-[10%] w-1/6"
           initial={{ opacity: 0, translateY: 50, translateX: -100 }}
           animate={{ opacity: 1, translateY: 0, translateX: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
         >
           <Image
-            src="/img/hero-soccer-ball.png"
+            src="/img/shirt.png"
             alt="Tøj"
-            width={150}
-            height={150}
+            width={250}
+            height={250}
           />
         </motion.div>
 
