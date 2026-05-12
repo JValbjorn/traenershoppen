@@ -46,15 +46,29 @@ export default function Home() {
         </div>
       </section>
       <section className="relative flex flex-1 w-full flex-col items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
-        <section className="w-full h-250 z-2 relative flex">
+        <section className="w-full h-220 z-2 relative flex">
           <HomePageArch />
           <HomePageImage />
         </section>
+        <section className="flex flex-col w-full">
+          <h2>POPULÆRE KATEGORIER</h2>
+          <div className="flex flex-row justify-around w-full">
+            <div className="bg-light-green w-25 h-10"></div>
+            <div className="bg-light-green w-25 h-10"></div>
+            <div className="bg-light-green w-25 h-10"></div>
+            <div className="bg-light-green w-25 h-10"></div>
+          </div>
+        </section>
+        <section className="flex flex-col w-full">
+          <h2>BESTSELLERS</h2>
+          <div className="flex flex-row justify-around w-full">
+            <div className="bg-light-green w-25 h-10"></div>
+            <div className="bg-light-green w-25 h-10"></div>
+            <div className="bg-light-green w-25 h-10"></div>
+            <div className="bg-light-green w-25 h-10"></div>
+          </div>
+        </section>
       </section>
-     <section>
-      <h2>POPULÆRE KATEGORIER</h2>
-      <div></div>
-     </section>
     </main>
   );
 }
