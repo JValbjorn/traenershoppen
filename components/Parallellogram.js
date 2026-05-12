@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { useNavigate } from "@/utils/navigate";
 import { useState } from "react";
 import { motion } from "motion/react";
 
-export default function Parallellogram({text, onClick}) {
+export default function Parallellogram({text, onClick, path}) {
     const [isHovering, setIsHovering] = useState(false);
+    const navigate = useNavigate();
 
     
     return (
@@ -24,7 +26,7 @@ export default function Parallellogram({text, onClick}) {
 
         <div className="row-start-2 col-span-3 skew-x-[-10deg] px-7 border-3 border-light-green hover:bg-light-green">
           <button
-            onClick={onClick}
+            onClick={onClick || (() => navigate(path))}
             className="skew-x-10 w-full h-full text-center"
           >
             {text}
