@@ -1,13 +1,23 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { path } from "motion/react-client";
 
 export default function Fan() {
+  // const { scrollYProgress } = useScroll();
+
+  // const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  // // Beregn offset for at sikre, at path'ens ende er 40px fra bunden
+  // const offsetPathLength = useTransform(pathLength, (value) => {
+  //   const viewportHeight = window.innerHeight;
+  //   const pathEndOffset = 40 / viewportHeight; // 40px som en procentdel af viewportens højde
+  //   return Math.min(value, 1 - pathEndOffset); // Begræns pathLength, så den stopper før bunden
+  // });
+
+  // console.log("pathlength", offsetPathLength);
+
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1687.12 1385.24"
-      // className="absolute xl:top-[-16%] xl:flex lg:top-[-15%] lg:flex md:top-[-12%] md:flex z-0 w-[120vw] left-[-9.5vw] h-auto hidden"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1687.12 3333.36">
       {/* Definerer patterns for images - "baggrundsbilleder" i hver path*/}
       <defs>
         <pattern
@@ -69,10 +79,10 @@ export default function Fan() {
         <motion.path
           className="cls-2"
           d="M1393.75,181.33c-56.03,40.89-108.92,88.15-158.08,141.01-57.05,61.32-109.08,130.18-155.17,205.4-.04.04-.06.08-.08.12-.06.09-.11.18-.17.27-.95,1.49-1.9,2.99-2.84,4.49-.35.56-.7,1.12-1.05,1.69-.91,1.45-1.8,2.9-2.69,4.36-1.15,1.87-2.29,3.75-3.41,5.64-1.01,1.67-2,3.34-2.98,5.02-1.13,1.92-2.24,3.84-3.35,5.77-.98,1.7-1.95,3.4-2.91,5.11-.11.19-.21.37-.32.56-.04.07-.08.14-.12.21-.84,1.48-1.67,2.97-2.5,4.47-.2.35-.4.7-.59,1.06-.94,1.68-1.86,3.36-2.79,5.05-.03.06-.07.13-.1.19-126.36,223.93-201.96,498.89-204.87,796.52v.13c-.06,5.61-.09,11.22-.09,16.84h-29.78c-.01-29.77-.76-59.32-2.21-88.63-5.88-119.12-23.42-234.14-51.16-343.16-56.21-220.93-154.3-417.24-282.1-573.21-16.38-19.98-33.23-39.28-50.55-57.9-46.51-50.01-96.37-95.01-149.06-134.35C433.58,71.01,629.24,0,843.56,0s402.49,68.32,550.19,181.33Z"
-          fill="var(--green)"
+          fill="var(--shaded_green)"
           initial={{ rotate: 0, opacity: 0, scale: 0.8, translateY: 1500 }}
           animate={{ rotate: 0, opacity: 1, scale: 1, translateY: 0 }}
-          transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
+          transition={{ delay: 0.1, duration: 0.8, ease: "easeInOut" }}
           style={{ transformOrigin: "bottom center" }}
         />
       </g>
@@ -84,22 +94,24 @@ export default function Fan() {
           fill="var(--dark_green)"
           initial={{ rotate: -200, opacity: 0, scale: 0.8, translateY: 1500 }}
           animate={{ rotate: 0, opacity: 1, scale: 1, translateY: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeInOut" }}
           style={{ transformOrigin: "bottom center" }}
         />
       </g>
-      <g id="line">
-        <polyline
+      <g id="Line">
+        <motion.path
           className="cls-3"
-          points="834.78 1385.05 834.78 1440.57 309.82 1626.08 309.82 1884.78 1379.94 2151.05 1379.94 2466.53 308.56 2672.22 308.56 3346.1"
+          d="M835.46 1385.24 835.46 1510.2 312.53 1695.71 312.53 1953.82 1381.25 2224.02 1381.25 2541.28 308.5 2745.61 311.5 3423.14"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ delay: 0.3, duration: 5, ease: "easeInOut" }}
         />
-        <polyline
-          className="cls-2"
-          points="802.07 1385.07 802.07 1417.67 277.1 1602.93 277.1 1909.06 1347.23 2176.72 1347.23 2439.97 275.84 2644.9 275.84 3346.12"
-        />
-        <polyline
-          className="cls-2"
-          points="867.53 1385.07 867.53 1463.81 342.56 1649.12 342.56 1860.41 1412.68 2125.26 1412.68 2493.9 341.3 2697.92 341.3 3346.12"
+        <motion.path
+          className="cls-4"
+          d="M834.77 1383.05 834.77 1510.2 311.84 1695.71 311.84 1953.82 1380.56 2224.02 1380.56 2541.28 307.8 2745.61 310.8 3423.14"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ delay: 0.3, duration: 5, ease: "easeInOut" }}
         />
       </g>
     </svg>

@@ -27,7 +27,7 @@ export default function Footer() {
         className="flex flex-col self-start justify-self-center pt-4 md:pt-0"
       >
         <Image
-          src="/img/pift.png"
+          src="/img/logo-white.png"
           alt="Trænershoppen - tilbage til forsiden"
           className="justify-self-center"
           width={70}
