@@ -1,14 +1,17 @@
 "use client";
-
+// Wondow==="undefined var et debug forslag fra COPilot"
 export function UserInfo() {
-  // Retrieve the data from localStorage
-  const savedData = JSON.parse(localStorage.getItem('checkoutContactInfo'));
-
-  // Check if data exists
-  if (!savedData) {
+  if (typeof window === "undefined") {
     return <p>Ingen brugerdata fundet.</p>;
-    console.log("Ingen data fundet i localStorage", savedData) ;
   }
+
+  const savedData = JSON.parse(localStorage.getItem("checkoutContactInfo"));
+
+  if (!savedData) {
+    console.log("Ingen data fundet i localStorage");
+    return <p>Ingen brugerdata fundet.</p>;
+  }
+
   return (
     <div>
       <p>{savedData.firstName || "Navn ikke angivet"} {savedData.lastName || "Efternavn ikke angivet"}</p>
