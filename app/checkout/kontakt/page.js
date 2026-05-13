@@ -48,7 +48,7 @@ export default function Kontakt() {
               placeholder="Telefonnummer"
               autoComplete="tel"
               onChange={handleChange}
-              value={data.phone}
+              value={data.phone || ""}
             />
             <input
               type="email"
@@ -56,7 +56,7 @@ export default function Kontakt() {
               placeholder="Email"
               autoComplete="email"
               onChange={handleChange}
-              value={data.email}
+              value={data.email || ""}
             />
             <h3>Leveringsadresse</h3>
             <div className="flex flex-row gap-4">
@@ -67,7 +67,7 @@ export default function Kontakt() {
                 autoComplete="given-name"
                 required
                 onChange={handleChange}
-                value={data.firstName}
+                value={data.firstName || ""}
               />
               <input
                 type="text"
@@ -76,7 +76,7 @@ export default function Kontakt() {
                 autoComplete="family-name"
                 required
                 onChange={handleChange}
-                value={data.lastName}
+                value={data.lastName || ""}
               />
             </div>
             <input
@@ -86,7 +86,7 @@ export default function Kontakt() {
               autoComplete="street-address"
               required
               onChange={handleChange}
-              value={data.address}
+              value={data.address || ""}
             />
             <input
               type="text"
@@ -95,7 +95,7 @@ export default function Kontakt() {
               autoComplete="postal-code"
               required
               onChange={handleChange}
-              value={data.postalCode}
+              value={data.postalCode || ""}
             />
             <input
               type="text"
@@ -104,7 +104,7 @@ export default function Kontakt() {
               autoComplete="locality"
               required
               onChange={handleChange}
-              value={data.city}
+              value={data.city || ""}
             />
             <input
               type="text"
@@ -113,7 +113,7 @@ export default function Kontakt() {
               autoComplete="country"
               required
               onChange={handleChange}
-              value={data.country}
+              value={data.country || ""}
             />
             <input
               type="text"
@@ -121,7 +121,7 @@ export default function Kontakt() {
               placeholder="Firmanavn (valgfrit)"
               autoComplete="organization"
               onChange={handleChange}
-              value={data.companyName}
+              value={data.companyName || ""}
             />
             <div className="flex flex-row justify-between mt-5">
               <button
@@ -132,10 +132,7 @@ export default function Kontakt() {
               >
                 Shop videre
               </button>
-              <CTAButton
-                text="Gå til levering"
-                onClick={() => router.push("/checkout/levering", console.log("debug er trykket"))}
-              />
+              <CTAButton path="/checkout/levering" text="Gå til levering" />
             </div>
           </form>
         </article>

@@ -13,21 +13,18 @@ export default function CheckoutNav() {
       <Link
         className="bg-none border-black text-black"
         href="/checkout/kontakt"
-        onClick={(e) => handleSubmit(e, "/checkout/kontakt")}
       >
         Oplysninger
       </Link>
       <Link
         className="bg-none border-black text-black"
         href="/checkout/levering"
-        onClick={(e) => handleSubmit(e, "/checkout/levering")}
       >
         Levering
       </Link>
       <Link
         className="bg-none border-black text-black"
         href="/checkout/betaling"
-        onClick={(e) => handleSubmit(e, "/checkout/betaling")}
       >
         Betaling
       </Link>
