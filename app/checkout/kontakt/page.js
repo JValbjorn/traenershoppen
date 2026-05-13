@@ -9,6 +9,7 @@ import CheckoutNav from "@/components/CheckoutNav";
 export default function Kontakt() {
   const router = useRouter();
   const handleChange = (e) => {
+  if (typeof window === "undefined") return;
   const { name, value } = e.target;
   const currentData = JSON.parse(localStorage.getItem("checkoutContactInfo")) || {};
   currentData[name] = value;
