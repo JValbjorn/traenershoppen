@@ -9,13 +9,13 @@ import CheckoutNav from "@/components/CheckoutNav";
 export default function Kontakt() {
   const router = useRouter();
   const handleChange = (e) => {
-  if (typeof window === "undefined") return;
-  const { name, value } = e.target;
-  const currentData = JSON.parse(localStorage.getItem("checkoutContactInfo")) || {};
-  currentData[name] = value;
-  localStorage.setItem("checkoutContactInfo", JSON.stringify(currentData));
-  console.log("Data gemt", currentData);
-};
+    if (typeof window === "undefined") return;
+    const { name, value } = e.target;
+    const currentData = JSON.parse(localStorage.getItem("checkoutContactInfo")) || {};
+    currentData[name] = value;
+    localStorage.setItem("checkoutContactInfo", JSON.stringify(currentData));
+    console.log("Data gemt", currentData);
+  };
 
   return (
     <div className="flex flex-row gap-4 px-30 py-20 justify-between">
