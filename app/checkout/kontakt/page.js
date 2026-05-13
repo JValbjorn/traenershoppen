@@ -33,8 +33,32 @@ export default function Kontakt() {
               Betaling
             </Link>
           </div>
-          {/* autoComplete er det so mgør google autofyld virker! */}
-          <form className="flex flex-col gap-4">
+          {/* autoComplete er det so mgør google autofyld virker */}
+          <form
+            className="flex flex-col gap-4"
+            onSubmit={(e) => {
+              e.preventDefault(); // Prevent default form submission
+
+              // Collect form data
+              const formData = {
+                phone: e.target.querySelector('input[placeholder="Telefonnummer"]').value,
+                email: e.target.querySelector('input[placeholder="Email"]').value,
+                firstName: e.target.querySelector('input[placeholder="Fornavn"]').value,
+                lastName: e.target.querySelector('input[placeholder="Efternavn"]').value,
+                address: e.target.querySelector('input[placeholder="Adresse"]').value,
+                postalCode: e.target.querySelector('input[placeholder="Postnummer"]').value,
+                city: e.target.querySelector('input[placeholder="By"]').value,
+                country: e.target.querySelector('input[placeholder="Land"]').value,
+                companyName: e.target.querySelector('input[placeholder="Firmanavn (valgfrit)"]').value,
+              };
+
+              // Save to localStorage
+              localStorage.setItem('checkoutContactInfo', JSON.stringify(formData));
+
+              // Optional: Navigate to another page
+              router.push("/checkout/levering");
+            }}
+          >
             <h3>Kontaktoplysninger</h3>
             <input type="tel" placeholder="Telefonnummer" autoComplete="tel" />
             <input type="email" placeholder="Email" autoComplete="email" />
@@ -95,6 +119,7 @@ export default function Kontakt() {
             <CTAButton
               text="Gå til levering"
               onClick={() => router.push("/checkout/levering")}
+              type="submit"
             />
           </div>
         </article>

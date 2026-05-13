@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import CTAButton from "@/components/CTAButton";
+import CartPreview from "@/components/CartPreview";
 
 export default function Kontakt() {
     return (
@@ -27,8 +28,7 @@ export default function Kontakt() {
                 </article>
             </div>
             <article>
-                <h1>Din Kurv</h1>
-                <p>Din kurv er tom</p>
+                <CartPreview/>
             </article>
         </div>
     );
