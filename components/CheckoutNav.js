@@ -1,28 +1,36 @@
 import Link from "next/link";
 
 export default function CheckoutNav() {
-    return (          
+  const handleSubmit = (e, href) => {
+    const form = document.querySelector("form");
+    if (form) {
+      form.requestSubmit(); // Trigger form inputternes onSubmit event
+    }
+  };
+
+  return (
     <div className="flex flex-row mb-5 justify-start gap-15">
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/kontakt"
-              type="submit"
-            >
-              Oplysninger
-            </Link>
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/levering"
-              type="submit"
-            >
-              Levering
-            </Link>
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/betaling"
-              type="submit"
-            >
-              Betaling
-            </Link>
-          </div>
-)}
+      <Link
+        className="bg-none border-black text-black"
+        href="/checkout/kontakt"
+        onClick={(e) => handleSubmit(e, "/checkout/kontakt")}
+      >
+        Oplysninger
+      </Link>
+      <Link
+        className="bg-none border-black text-black"
+        href="/checkout/levering"
+        onClick={(e) => handleSubmit(e, "/checkout/levering")}
+      >
+        Levering
+      </Link>
+      <Link
+        className="bg-none border-black text-black"
+        href="/checkout/betaling"
+        onClick={(e) => handleSubmit(e, "/checkout/betaling")}
+      >
+        Betaling
+      </Link>
+    </div>
+  );
+}

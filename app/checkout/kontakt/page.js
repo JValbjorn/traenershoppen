@@ -8,85 +8,93 @@ import CheckoutNav from "@/components/CheckoutNav";
 
 export default function Kontakt() {
   const router = useRouter();
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+  const currentData = JSON.parse(localStorage.getItem("checkoutContactInfo")) || {};
+  currentData[name] = value;
+  localStorage.setItem("checkoutContactInfo", JSON.stringify(currentData));
+  console.log("Data gemt", currentData);
+};
 
   return (
     <div className="flex flex-row gap-4 px-30 py-20 justify-between">
       <div className="flex flex-row gap-10">
         <Link href="/produktoversigt">Tilbage</Link>
         <article>
-          {/*CheckoutNav er navigation mellem steps */}
-          <CheckoutNav />
 
           {/* autoComplete er det so mgør google autofyld virker */}
           <form
             className="flex flex-col gap-4"
-            onSubmit={(e) => {
-              e.preventDefault(); //Fixer at siden refresher uden at re-route.
-              console.log("Userdata er gemt");
-
-              const formData = {
-                phone: e.target.querySelector('input[placeholder="Telefonnummer"]').value,
-                email: e.target.querySelector('input[placeholder="Email"]').value,
-                firstName: e.target.querySelector('input[placeholder="Fornavn"]').value,
-                lastName: e.target.querySelector('input[placeholder="Efternavn"]').value,
-                address: e.target.querySelector('input[placeholder="Adresse"]').value,
-                postalCode: e.target.querySelector('input[placeholder="Postnummer"]').value,
-                city: e.target.querySelector('input[placeholder="By"]').value,
-                country: e.target.querySelector('input[placeholder="Land"]').value,
-                companyName: e.target.querySelector('input[placeholder="Firmanavn (valgfrit)"]').value,
-              };
-
-              localStorage.setItem('checkoutContactInfo', JSON.stringify(formData));
-
-              router.push("/checkout/levering");
-            }}
           >
+          {/*CheckoutNav er navigation mellem steps */}
+          <CheckoutNav />
             <h3>Kontaktoplysninger</h3>
-            <input type="tel" placeholder="Telefonnummer" autoComplete="tel" />
-            <input type="email" placeholder="Email" autoComplete="email" />
+            <input type="tel"  name="phone" placeholder="Telefonnummer" autoComplete="tel"  onChange={handleChange} defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.phone || ""}/>
+            <input type="email" name="email" placeholder="Email" autoComplete="email" onChange={handleChange} defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.email || ""}/>
             <h3>Leveringsadresse</h3>
             <div className="flex flex-row gap-4">
               <input
                 type="text"
+                name="firstName"
                 placeholder="Fornavn"
                 autoComplete="given-name"
                 required
+                onChange={handleChange}
+                defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.firstName || ""}
               />
               <input
                 type="text"
+                name="lastName"
                 placeholder="Efternavn"
                 autoComplete="family-name"
                 required
+                onChange={handleChange}
+                defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.lastName || ""}
               />
             </div>
             <input
               type="text"
+              name="address"
               placeholder="Adresse"
               autoComplete="street-address"
               required
+              onChange={handleChange}
+              defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.address || ""}
             />
             <input
               type="text"
+              name="postalCode"
               placeholder="Postnummer"
               autoComplete="postal-code"
               required
+              onChange={handleChange}
+              defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.postalCode || ""}
             />
             <input
               type="text"
+              name="city"
               placeholder="By"
               autoComplete=" locality"
+              onChange={handleChange}
               required
+              defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.city || ""}
             />
             <input
               type="text"
+              name="country"
               placeholder="Land"
               autoComplete="country"
+              onChange={handleChange}
               required
+              defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.country || ""}
             />
             <input
               type="text"
+              name="companyName"
               placeholder="Firmanavn (valgfrit)"
               autoComplete="organization"
+              onChange={handleChange}
+              defaultValue={JSON.parse(localStorage.getItem("checkoutContactInfo"))?.companyName || ""}
             />
           
           <div className="flex flex-row justify-between mt-5">
@@ -100,7 +108,6 @@ export default function Kontakt() {
             </button>
             <CTAButton
               text="Gå til levering"
-              type="submit"
               onClick={() => router.push("/checkout/levering", console.log("debug er trykket"))}
             />
           </div>
