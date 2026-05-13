@@ -101,14 +101,26 @@ export default function Home() {
         >
           <h2 className="text-4xl">POPULÆRE KATEGORIER</h2>
           <div className="flex flex-row justify-around w-full">
-            <Parallellogram text="Fodbolde" path="/fodbold/fodboldudstyr/bolde" />
-            <Parallellogram text="Fodbolde" path="" />
             <Parallellogram
               text="Fodbolde"
-              path=""
+              path="/produkter/fodbold/fodboldudstyr/bolde"
             />
-            <Parallellogram text="Fodbolde" path="" />
-            <Parallellogram text="Fodbolde" path="" />
+            <Parallellogram
+              text="Fodbolde"
+              path="/produkter/fodbold/fodboldudstyr/bolde"
+            />
+            <Parallellogram
+              text="Fodbolde"
+              path="/produkter/fodbold/fodboldudstyr/bolde"
+            />
+            <Parallellogram
+              text="Fodbolde"
+              path="/produkter/fodbold/fodboldudstyr/bolde"
+            />
+            <Parallellogram
+              text="Fodbolde"
+              path="/produkter/fodbold/fodboldudstyr/bolde"
+            />
           </div>
         </FadeInWrapper>
         <FadeInWrapper
@@ -125,7 +137,7 @@ export default function Home() {
                 <Parallellogram
                   key={product.id} // Brug produktets id som nøgle
                   text={product.brand} // Brug "brand" som tekst
-                  onClick={() => router.push(`/products/${product.id}`)} // Naviger til produktdetaljer
+                  onClick={() => router.push(`/produkter/${product.id}`)} // Naviger til produktdetaljer
                 />
               ))}
           </div>
