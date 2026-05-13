@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "@/utils/navigate";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import DataFetch from "../utils/DataFetch";
@@ -15,27 +15,27 @@ import Parallellogram from "../components/Parallellogram";
 import FadeInWrapper from "../components/FadeInWrapper";
 
 export default function Home() {
-  const router = useRouter();
-const [products, setProducts] = useState([]); // State til at gemme produkter
-const [loading, setLoading] = useState(true); // State til at håndtere loading
-const [error, setError] = useState(null); // State til at håndtere fejl
+  const navigate = useNavigate();
+  const [products, setProducts] = useState([]); // State til at gemme produkter
+  const [loading, setLoading] = useState(true); // State til at håndtere loading
+  const [error, setError] = useState(null); // State til at håndtere fejl
 
-// Fetch data fra Firebase
- useEffect(() => {
-   const fetchData = async () => {
-     try {
-       const data = await DataFetch("products"); // Hent data fra DataFetch
-       setProducts(data); // Gem data i state
-     } catch (err) {
-       console.error("Error fetching data:", err);
-       setError(err.message); // Gem fejlbesked
-     } finally {
-       setLoading(false); // Stop loading
-     }
-   };
+  // Fetch data fra Firebase
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await DataFetch("products"); // Hent data fra DataFetch
+        setProducts(data); // Gem data i state
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError(err.message); // Gem fejlbesked
+      } finally {
+        setLoading(false); // Stop loading
+      }
+    };
 
-   fetchData();
- }, []);
+    fetchData();
+  }, []);
 
   return (
     <main className="relative overflow-hidden flex flex-col pb-[10vh]">
@@ -101,26 +101,14 @@ const [error, setError] = useState(null); // State til at håndtere fejl
         >
           <h2 className="text-4xl">POPULÆRE KATEGORIER</h2>
           <div className="flex flex-row justify-around w-full">
+            <Parallellogram text="Fodbolde" path="/fodbold/fodboldudstyr/bolde" />
+            <Parallellogram text="Fodbolde" path="" />
             <Parallellogram
               text="Fodbolde"
-              onClick={() => router.push("/fodbold/bolde")}
+              path=""
             />
-            <Parallellogram
-              text="Fodbolde"
-              onClick={() => router.push("/fodbold/bolde")}
-            />{" "}
-            <Parallellogram
-              text="Fodbolde"
-              onClick={() => router.push("/fodbold/bolde")}
-            />{" "}
-            <Parallellogram
-              text="Fodbolde"
-              onClick={() => router.push("/fodbold/bolde")}
-            />{" "}
-            <Parallellogram
-              text="Fodbolde"
-              onClick={() => router.push("/fodbold/bolde")}
-            />
+            <Parallellogram text="Fodbolde" path="" />
+            <Parallellogram text="Fodbolde" path="" />
           </div>
         </FadeInWrapper>
         <FadeInWrapper
