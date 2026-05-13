@@ -1,104 +1,121 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Link from "next/link";
 
 const navItems = [
   {
     title: "Fodbold",
+    slug: "fodbold",
     sections: [
       {
         title: "Fodboldtøj",
+        slug: "fodboldtoej",
         categories: [
-          { title: "Trøjer", href: "#troejer" },
-          { title: "Shorts", href: "#shorts" },
-          { title: "Bukser", href: "#bukser" },
-          { title: "Jakker", href: "#jakker" },
+          { title: "Trøjer", slug: "troejer" },
+          { title: "Shorts", slug: "shorts" },
+          { title: "Bukser", slug: "bukser" },
+          { title: "Jakker", slug: "jakker" },
         ],
       },
       {
         title: "Fodboldudstyr",
+        slug: "fodboldudstyr",
         categories: [
-          { title: "Kegler", href: "#kegler" },
-          { title: "Overtræksveste", href: "#overtraeksveste" },
-          { title: "Strømpetape", href: "#stroempe-tape" },
-          { title: "Boldsække", href: "#boldsaekke" },
+          { title: "Bolde", slug: "bolde" },
+          { title: "Boldsække", slug: "boldsaekke" },
+          { title: "Kegler", slug: "kegler" },
+          { title: "Overtræksveste", slug: "overtraeksveste" },
+          { title: "Strømpetape", slug: "stroempetape" },
         ],
       },
       {
         title: "Sportspleje",
+        slug: "sportspleje",
         categories: [
-          { title: "Isposer", href: "#isposer" },
-          { title: "Sportstape", href: "#sportstape" },
-          { title: "Varmesalve", href: "#varmesalve" },
+          { title: "Isposer", slug: "isposer" },
+          { title: "Sportstape", slug: "sportstape" },
+          { title: "Varmesalve", slug: "varmesalve" },
         ],
       },
     ],
   },
   {
     title: "Håndbold",
+    slug: "haandbold",
     sections: [
       {
         title: "Håndboldtøj",
+        slug: "haandboldtoej",
         categories: [
-          { title: "Trøjer", href: "#troejer" },
-          { title: "Shorts", href: "#shorts" },
-          { title: "Bukser", href: "#bukser" },
+          { title: "Trøjer", slug: "troejer" },
+          { title: "Shorts", slug: "shorts" },
+          { title: "Bukser", slug: "bukser" },
         ],
       },
       {
         title: "Håndboldudstyr",
+        slug: "haandboludstyr",
         categories: [
-          { title: "Kegler", href: "#kegler" },
-          { title: "Overtræksveste", href: "#overtraeksveste" },
-          { title: "Harpiks", href: "#harpiks" },
-          { title: "Harpiksfjernere", href: "#harpiksfjernere" },
+          { title: "Bolde", slug: "bolde" },
+          { title: "Kegler", slug: "kegler" },
+          { title: "Overtræksveste", slug: "overtraeksveste" },
+          { title: "Harpiks", slug: "harpiks" },
+          { title: "Harpiksfjernere", slug: "harpiksfjernere" },
         ],
       },
       {
         title: "Sportspleje",
+        slug: "sportspleje",
         categories: [
-          { title: "Isposer", href: "#isposer" },
-          { title: "Sportstape", href: "#sportstape" },
-          { title: "Varmesalve", href: "#varmesalve" },
+          { title: "Isposer", slug: "isposer" },
+          { title: "Sportstape", slug: "sportstape" },
+          { title: "Varmesalve", slug: "varmesalve" },
         ],
       },
     ],
   },
   {
     title: "Tøj",
+    slug: "toej",
     sections: [
       {
         title: "Overdele",
+        slug: "overdele",
         categories: [
-          { title: "Trøjer", href: "#troejer" },
-          { title: "Jakker", href: "#jakker" },
-          { title: "Overtræksveste", href: "#overtraeksveste" },
+          { title: "Trøjer", slug: "troejer" },
+          { title: "Jakker", slug: "jakker" },
+          { title: "Overtræksveste", slug: "overtraeksveste" },
         ],
       },
       {
         title: "underdele",
+        slug: "underdele",
         categories: [
-          { title: "Shorts", href: "#shorts" },
-          { title: "Bukser", href: "#bukser" },
+          { title: "Shorts", slug: "shorts" },
+          { title: "Bukser", slug: "bukser" },
         ],
       },
       {
         title: "Sportstasker",
+        slug: "sportstasker",
         categories: [
-          { title: "Boldtnet", href: "#boldtnet" },
-          { title: "Holdtasker", href: "#holdtasker" },
+          { title: "Boldtnet", slug: "boldnet" },
+          { title: "Holdtasker", slug: "holdtasker" },
         ],
       },
     ],
   },
   {
     title: "Øvelses inspiration",
+    slug: "oevelser",
     sections: [
       {
         title: "Sportsgren",
+        slug: "sportsgren",
         categories: [
-          { title: "Fodbold", href: "#fodbold-oevelser" },
-          { title: "Håndbold", href: "#haandbold-oevelser" },
+          { title: "Fodbold", slug: "fodbold" },
+          { title: "Håndbold", slug: "haandbold" },
         ],
       },
     ],
@@ -209,7 +226,7 @@ export default function MenuItems() {
                 type="button"
                 className="relative text-white py-2 px-4 transition before:absolute before:inset-0 before:border-2 before:border-light-green before:opacity-0 before:transition-all before:duration-200 before:transform before:skew-x-[-10deg] hover:before:opacity-100 focus:before:opacity-100 focus:outline-none"
               >
-                <span className="relative z-10">{item.title}</span>
+                <Link href={`/produkter/${item.slug}`}className="relative z-10">{item.title}</Link>
               </button>
 
               <div
@@ -225,20 +242,22 @@ export default function MenuItems() {
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                       {item.sections.map((section) => (
                         <div key={section.title}>
-                          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white bg-dark-green mb-4">
+                          <Link 
+                          href={`/produkter/${item.slug}/${section.slug}`}
+                          className="text-sm font-semibold uppercase tracking-[0.2em] text-white bg-dark-green mb-4">
                             {section.title}
-                          </p>
+                          </Link>
                           <div className="space-y-2">
                             {section.categories.map((category) => (
-                              <a
+                              <Link
                                 key={category.title}
-                                href={category.href}
+                                href={`/produkter/${item.slug}/${section.slug}/${category.slug}`}
                                 className="block px-3 py-2 transition hover:bg-light-green"
                               >
                                 <p className="font-semibold text-white">
                                   {category.title}
                                 </p>
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -247,13 +266,13 @@ export default function MenuItems() {
                   ) : (
                     <div className="space-y-2">
                       {item.categories?.map((category) => (
-                        <a
+                        <Link
                           key={category.title}
-                          href={category.href}
+                          href={`/produkter/${item.slug}/${category.slug}`}
                           className="block px-3 py-3 transition hover:bg-light-green"
                         >
                           <p className="font-semibold">{category.title}</p>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   )}
