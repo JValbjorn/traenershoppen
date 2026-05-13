@@ -1,6 +1,6 @@
 {
   "products": {
-    "1": {
+    "0": {
       "title": "Select Spain Coach jakke",
       "brand": "Select",
       "price": 799.95,
@@ -59,7 +59,7 @@
         }
       ]
     },
-    "2": {
+    "1": {
       "title": "Select Numero 10 V23",
       "brand": "Select",
       "price": 289.95,
@@ -110,7 +110,7 @@
         }
       ]
     },
-    "3": {
+    "2": {
       "title": "Select Boldsæk Fodbold 18-20",
       "brand": "Select",
       "price": 239.95,
@@ -139,7 +139,7 @@
         }
       ]
     },
-    "4": {
+    "3": {
       "title": "Hummel Essential Regnjakke til voksne - Sort",
       "brand": "Hummel",
       "price": 279.95,
@@ -198,7 +198,7 @@
         }
       ]
     },
-    "5": {
+    "4": {
       "title": "Select Boldsæt - 10 Bolde Numero 10 V23",
       "brand": "Select",
       "price": 2750,

@@ -1,7 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import DataFetch from "../utils/DataFetch";
+
 import Image from "next/image";
+
+//Components
 import CTAButton from "@/components/CTAButton";
 import Fan from "@/components/Fan";
 import HomePageArch from "@/components/HomePageArch";
@@ -11,6 +16,26 @@ import FadeInWrapper from "../components/FadeInWrapper";
 
 export default function Home() {
   const router = useRouter();
+const [products, setProducts] = useState([]); // State til at gemme produkter
+const [loading, setLoading] = useState(true); // State til at håndtere loading
+const [error, setError] = useState(null); // State til at håndtere fejl
+
+// Fetch data fra Firebase
+ useEffect(() => {
+   const fetchData = async () => {
+     try {
+       const data = await DataFetch("products"); // Hent data fra DataFetch
+       setProducts(data); // Gem data i state
+     } catch (err) {
+       console.error("Error fetching data:", err);
+       setError(err.message); // Gem fejlbesked
+     } finally {
+       setLoading(false); // Stop loading
+     }
+   };
+
+   fetchData();
+ }, []);
 
   return (
     <main className="relative overflow-hidden flex flex-col pb-[10vh]">
@@ -48,12 +73,7 @@ export default function Home() {
           animate={{ opacity: 1, translateY: 0, translateX: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
         >
-          <Image
-            src="/img/shirt.png"
-            alt="Tøj"
-            width={250}
-            height={250}
-          />
+          <Image src="/img/shirt.png" alt="Tøj" width={250} height={250} />
         </motion.div>
 
         <motion.div
@@ -63,10 +83,7 @@ export default function Home() {
           transition={{ delay: 0.9, duration: 0.3, ease: "easeInOut" }}
         >
           <CTAButton text="Fodbold" path="/fodbold" />
-          <CTAButton
-            text="Håndbold"
-           path="/haandbold"
-          />
+          <CTAButton text="Håndbold" path="/haandbold" />
           <CTAButton text="Tøj" path="toej" />
         </motion.div>
       </section>
@@ -112,10 +129,17 @@ export default function Home() {
         >
           <h2 className="text-4xl">BESTSELLERS</h2>
           <div className="flex flex-row justify-between w-full mt-10">
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
+            {loading && <p>Loading...</p>}
+            {error && <p>Error: {error}</p>}
+            {!loading &&
+              !error &&
+              products.map((product) => (
+                <Parallellogram
+                  key={product.id} // Brug produktets id som nøgle
+                  text={product.brand} // Brug "brand" som tekst
+                  onClick={() => router.push(`/products/${product.id}`)} // Naviger til produktdetaljer
+                />
+              ))}
           </div>
         </FadeInWrapper>
       </section>
