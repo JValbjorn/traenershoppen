@@ -2,11 +2,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { ref, get } from "firebase/database";
 import { db } from "@/lib/firebase";
 import ProductCard from "@/components/ProductCard";
 
-export default function ProductsPage() {
+export default function ProductsPage({ params }) {
+  const { slug } = params;
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -17,10 +19,11 @@ export default function ProductsPage() {
     };
 
     fetchProducts();
-  }, []);
+  }, [slug]);
 
   return (
     <div>
+
       {products.map((product, i) => (
         <ProductCard key={i} product={product} />
       ))}
