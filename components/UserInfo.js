@@ -1,3 +1,5 @@
+"use client";
+
 export function UserInfo() {
   // Retrieve the data from localStorage
   const savedData = JSON.parse(localStorage.getItem('checkoutContactInfo'));
