@@ -4,6 +4,7 @@ import Link from "next/link";
 import CTAButton from "@/components/CTAButton";
 import CartPreview from "@/components/CartPreview";
 import { useRouter } from "next/navigation";
+import CheckoutNav from "@/components/CheckoutNav";
 
 export default function Kontakt() {
   const router = useRouter();
@@ -13,33 +14,16 @@ export default function Kontakt() {
       <div className="flex flex-row gap-10">
         <Link href="/produktoversigt">Tilbage</Link>
         <article>
-          <div className="flex flex-row mb-5 justify-start gap-15">
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/kontakt"
-            >
-              Oplysninger
-            </Link>
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/levering"
-            >
-              Levering
-            </Link>
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/betaling"
-            >
-              Betaling
-            </Link>
-          </div>
+          {/*CheckoutNav er navigation mellem steps */}
+          <CheckoutNav />
+
           {/* autoComplete er det so mgør google autofyld virker */}
           <form
             className="flex flex-col gap-4"
             onSubmit={(e) => {
-              e.preventDefault(); // Prevent default form submission
+              e.preventDefault(); //Fixer at siden refresher uden at re-route.
+              console.log("Userdata er gemt");
 
-              // Collect form data
               const formData = {
                 phone: e.target.querySelector('input[placeholder="Telefonnummer"]').value,
                 email: e.target.querySelector('input[placeholder="Email"]').value,
@@ -52,10 +36,8 @@ export default function Kontakt() {
                 companyName: e.target.querySelector('input[placeholder="Firmanavn (valgfrit)"]').value,
               };
 
-              // Save to localStorage
               localStorage.setItem('checkoutContactInfo', JSON.stringify(formData));
 
-              // Optional: Navigate to another page
               router.push("/checkout/levering");
             }}
           >
@@ -106,7 +88,7 @@ export default function Kontakt() {
               placeholder="Firmanavn (valgfrit)"
               autoComplete="organization"
             />
-          </form>
+          
           <div className="flex flex-row justify-between mt-5">
             <button
               onClick={() => {
@@ -118,10 +100,11 @@ export default function Kontakt() {
             </button>
             <CTAButton
               text="Gå til levering"
-              onClick={() => router.push("/checkout/levering")}
               type="submit"
+              onClick={() => router.push("/checkout/levering", console.log("debug er trykket"))}
             />
           </div>
+          </form>
         </article>
       </div>
       <article>

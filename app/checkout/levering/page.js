@@ -4,6 +4,8 @@ import Link from "next/link";
 import CTAButton from "@/components/CTAButton";
 import { useRouter } from "next/navigation";
 import CartPreview from "@/components/CartPreview";
+import { UserInfo } from "@/components/UserInfo";
+import CheckoutNav from "@/components/CheckoutNav";
 
 export default function Kontakt() {
   const router = useRouter();
@@ -13,30 +15,12 @@ export default function Kontakt() {
       <div className="flex flex-row gap-10">
         <Link href="/checkout/kontakt">Tilbage</Link>
         <article>
-          <div className="flex flex-row mb-5 justify-start gap-15">
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/kontakt"
-            >
-              Oplysninger
-            </Link>
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/levering"
-            >
-              Levering
-            </Link>
-            <Link
-              className="bg-none border-black text-black "
-              href="/checkout/betaling"
-            >
-              Betaling
-            </Link>
-          </div>
+          {/*CheckoutNav er navigation mellem steps */}
+          <CheckoutNav />
           <div className="flex flex-col justify-between mt-5">
             <div>
               {/* Her skal der laves en funktion der gemmer de indtastede oplysninger i en global state, så de kan bruges på betalings siden */}
-              <p>Her er en besked</p>
+              <UserInfo />
             </div>
             <div className="flex flex-row justify-between mt-5">
             <button

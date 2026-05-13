@@ -79,3 +79,8 @@ body {
   stroke-width: 30px;
   fill: none;
 }
+
+form input {
+  border: 1px solid var(--black);
+  padding: 5px
+}
