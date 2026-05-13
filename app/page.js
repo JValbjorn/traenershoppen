@@ -1,7 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import DataFetch from "../utils/DataFetch";
+
 import Image from "next/image";
+
+//Components
 import CTAButton from "@/components/CTAButton";
 import Fan from "@/components/Fan";
 import HomePageArch from "@/components/HomePageArch";
@@ -11,6 +16,26 @@ import FadeInWrapper from "../components/FadeInWrapper";
 
 export default function Home() {
   const router = useRouter();
+const [products, setProducts] = useState([]); // State til at gemme produkter
+const [loading, setLoading] = useState(true); // State til at håndtere loading
+const [error, setError] = useState(null); // State til at håndtere fejl
+
+// Fetch data fra Firebase
+ useEffect(() => {
+   const fetchData = async () => {
+     try {
+       const data = await DataFetch("products"); // Hent data fra DataFetch
+       setProducts(data); // Gem data i state
+     } catch (err) {
+       console.error("Error fetching data:", err);
+       setError(err.message); // Gem fejlbesked
+     } finally {
+       setLoading(false); // Stop loading
+     }
+   };
+
+   fetchData();
+ }, []);
 
   return (
     <main className="relative overflow-hidden flex flex-col pb-[10vh]">
@@ -30,30 +55,25 @@ export default function Home() {
           />
         </motion.div>
         <motion.div
-          className="absolute top-[5%] left-[50%] w-1/10 translate-x-[-50%]"
+          className="absolute top-[5%] left-[50%] w-1/8 translate-x-[-50%]"
           initial={{ opacity: 0, translateY: 100 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
         >
           <Image
-            src="/img/hero-soccer-ball.png"
+            src="/img/handball.png"
             alt="Håndbold"
-            width={150}
-            height={150}
+            width={190}
+            height={190}
           />
         </motion.div>
         <motion.div
-          className="absolute top-[9%] right-[10%] w-1/10"
+          className="absolute top-[7%] right-[10%] w-1/6"
           initial={{ opacity: 0, translateY: 50, translateX: -100 }}
           animate={{ opacity: 1, translateY: 0, translateX: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
         >
-          <Image
-            src="/img/hero-soccer-ball.png"
-            alt="Tøj"
-            width={150}
-            height={150}
-          />
+          <Image src="/img/shirt.png" alt="Tøj" width={250} height={250} />
         </motion.div>
 
         <motion.div
@@ -62,12 +82,9 @@ export default function Home() {
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.9, duration: 0.3, ease: "easeInOut" }}
         >
-          <CTAButton text="Fodbold" onClick={() => router.push("/fodbold")} />
-          <CTAButton
-            text="Håndbold"
-            onClick={() => router.push("/haandbold")}
-          />
-          <CTAButton text="Tøj" onClick={() => router.push("/toej")} />
+          <CTAButton text="Fodbold" path="/fodbold" />
+          <CTAButton text="Håndbold" path="/haandbold" />
+          <CTAButton text="Tøj" path="toej" />
         </motion.div>
       </section>
       <section className="relative grid grid-cols-3 grid-auto-rows gap-55 w-full items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
@@ -112,10 +129,17 @@ export default function Home() {
         >
           <h2 className="text-4xl">BESTSELLERS</h2>
           <div className="flex flex-row justify-between w-full mt-10">
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
-            <div className="bg-light-green w-25 h-10"></div>
+            {loading && <p>Loading...</p>}
+            {error && <p>Error: {error}</p>}
+            {!loading &&
+              !error &&
+              products.map((product) => (
+                <Parallellogram
+                  key={product.id} // Brug produktets id som nøgle
+                  text={product.brand} // Brug "brand" som tekst
+                  onClick={() => router.push(`/products/${product.id}`)} // Naviger til produktdetaljer
+                />
+              ))}
           </div>
         </FadeInWrapper>
       </section>
