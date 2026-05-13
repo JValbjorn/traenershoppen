@@ -3,6 +3,7 @@
 import Link from "next/link";
 import CTAButton from "@/components/CTAButton";
 import { useRouter } from "next/navigation";
+import CartPreview from "@/components/CartPreview";
 
 export default function Kontakt() {
   const router = useRouter();
@@ -32,7 +33,12 @@ export default function Kontakt() {
               Betaling
             </Link>
           </div>
-          <div className="flex flex-row justify-between mt-5">
+          <div className="flex flex-col justify-between mt-5">
+            <div>
+              {/* Her skal der laves en funktion der gemmer de indtastede oplysninger i en global state, så de kan bruges på betalings siden */}
+              <p>Her er en besked</p>
+            </div>
+            <div className="flex flex-row justify-between mt-5">
             <button
               onClick={() => {
                 console.log("Shop videre er trykket");
@@ -45,12 +51,12 @@ export default function Kontakt() {
               text="Gå til betaling"
               onClick={() => router.push("/checkout/betaling")}
             />
+            </div>
           </div>
         </article>
       </div>
       <article>
-        <h1>Din Kurv</h1>
-        <p>Din kurv er tom</p>
+        <CartPreview/>
       </article>
     </div>
   );
