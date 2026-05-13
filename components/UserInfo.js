@@ -1,5 +1,5 @@
 "use client";
-// Wondow==="undefined var et debug forslag fra COPilot"
+// Window==="undefined var et debug forslag fra COPilot"
 export function UserInfo() {
   if (typeof window === "undefined") {
     return <p>Ingen brugerdata fundet.</p>;
@@ -19,7 +19,7 @@ export function UserInfo() {
       <p>{savedData.address || "Adresse ikke angivet"}</p>
       <p>{savedData.postalCode || "Postnummer ikke angivet"} {savedData.city || "By ikke angivet"}</p>
       <p>{savedData.country || "Land ikke angivet"}</p>
-      <p>{savedData.companyName || " "}</p>
+      <p>{savedData.companyName || "Firma ikke angivet"}</p>
     </div>
   );
 }
