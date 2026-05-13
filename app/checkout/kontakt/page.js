@@ -123,6 +123,7 @@ export default function Kontakt() {
               onChange={handleChange}
               value={data.companyName || ""}
             />
+          </form>
             <div className="flex flex-row justify-between mt-5">
               <button
                 onClick={() => {
@@ -134,7 +135,6 @@ export default function Kontakt() {
               </button>
               <CTAButton path="/checkout/levering" text="Gå til levering" />
             </div>
-          </form>
         </article>
       </div>
       <article>
