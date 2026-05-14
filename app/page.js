@@ -1,7 +1,6 @@
 "use client";
 import { useNavigate } from "@/utils/navigate";
 import { motion } from "motion/react";
-
 import Image from "next/image";
 
 //Components
@@ -19,7 +18,7 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden flex flex-col pb-[10vh]">
       <Fan />
-      <section className="grid md:grid-cols-7 md:grid-rows-5 grid-cols-1 gap-5 mt-10 justify-items-center h-auto">
+      <section className="md:grid md:grid-cols-7 md:grid-rows-5 flex flex-col justify-center items-center gap-5 mt-10 justify-items-center h-auto">
         <motion.div
           className="hidden md:block col-start-2 row-start-2 row-span-2 z-4 self-center"
           initial={{ opacity: 0, translateY: 50, translateX: 100 }}
@@ -85,9 +84,9 @@ export default function Home() {
           transition={{ delay: 0.9, duration: 0.3, ease: "easeInOut" }}
         ></motion.div>
       </section>
-      <section className="relative grid grid-cols-3 grid-auto-rows 2xl:gap-55 xl:gap-50 lg:gap-30 md:gap-20 w-full items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start 2xl:-mt-5 xl:-mt-35 lg:-mt-25 md:-mt-20">
+      <section className="relative flex flex-col justify-center items-center md:grid md:grid-cols-3 md:grid-auto-rows 2xl:gap-55 xl:gap-50 lg:gap-30 md:gap-20 w-full pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start 2xl:-mt-5 xl:-mt-35 lg:-mt-25 md:-mt-20 mt-0">
         <FadeInWrapper
-          className="col-span-3 xl:h-220 lg:h-190 md:h-130 z-2 relative flex"
+          className="md:col-span-3 xl:h-220 lg:h-190 md:h-130 z-2 relative flex flex-col md:flex-row items-center justify-center gap-10 w-full h-190"
           amount={0.5}
           duration={0.5}
         >
@@ -95,12 +94,12 @@ export default function Home() {
           <HomePageImage />
         </FadeInWrapper>
         <FadeInWrapper
-          className="col-span-2 col-start-2 flex flex-col w-full"
+          className="md:col-span-2 md:col-start-2 flex flex-col w-full relative"
           amount={0.4}
           duration={0.5}
         >
           <h2 className="text-4xl">POPULÆRE KATEGORIER</h2>
-          <div className="flex flex-row justify-around w-full">
+          <div className="flex flex-row flex-wrap md:flex-nowrap justify-around w-full">
             <Parallellogram
               text="Fodbolde"
               path="/produkter/fodbold/fodboldudstyr/bolde"
@@ -116,15 +115,17 @@ export default function Home() {
             <Parallellogram
               text="Fodbolde"
               path="/produkter/fodbold/fodboldudstyr/bolde"
+              className={"hidden lg:grid"}
             />
             <Parallellogram
               text="Fodbolde"
               path="/produkter/fodbold/fodboldudstyr/bolde"
+              className={"hidden xl:grid"}
             />
           </div>
         </FadeInWrapper>
         <FadeInWrapper
-          className="flex flex-col w-full col-span-2 col-start-1 mt-40"
+          className="flex flex-col w-full md:col-span-2 md:col-start-1 mt-40 relative"
           amount={0.4}
           duration={0.5}
         >

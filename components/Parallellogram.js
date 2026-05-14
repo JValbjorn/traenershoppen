@@ -3,13 +3,13 @@ import { useNavigate } from "@/utils/navigate";
 import { useState } from "react";
 import { motion } from "motion/react";
 
-export default function Parallellogram({text, onClick, path}) {
+export default function Parallellogram({text, onClick, path, className}) {
     const [isHovering, setIsHovering] = useState(false);
     const navigate = useNavigate();
 
     
     return (
-      <motion.div className="grid grid-rows-2 grid-cols-4 min-h-20">
+      <motion.div className={`grid grid-rows-2 grid-cols-4 min-h-20 ${className}`}>
         {isHovering && (
           <Image
             src="/img/green-fan.png"
@@ -21,7 +21,7 @@ export default function Parallellogram({text, onClick, path}) {
         )}
 
         <div
-          className="row-start-2 col-span-3 skew-x-[-10deg] px-7 border-3 border-light-green bg-light-gray hover:bg-light-green"
+          className="row-start-2 w-full col-span-3 skew-x-[-10deg] px-7 border-3 border-light-green bg-light-gray hover:bg-light-green"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
