@@ -19,9 +19,9 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden flex flex-col pb-[10vh]">
       <Fan />
-      <section className="grid grid-cols-7 grid-rows-5 gap-5 mt-10 justify-items-center h-auto">
+      <section className="grid md:grid-cols-7 md:grid-rows-5 grid-cols-1 gap-5 mt-10 justify-items-center h-auto">
         <motion.div
-          className="col-start-2 row-start-2 row-span-2 z-4 self-center"
+          className="hidden md:block col-start-2 row-start-2 row-span-2 z-4 self-center"
           initial={{ opacity: 0, translateY: 50, translateX: 100 }}
           animate={{ opacity: 1, translateY: 0, translateX: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
@@ -34,7 +34,7 @@ export default function Home() {
           />
         </motion.div>
         <motion.div
-          className="col-start-4 row-start-1 row-span-2 z-4 self-center"
+          className="hidden md:block col-start-4 row-start-1 row-span-2 z-4 self-center"
           initial={{ opacity: 0, translateY: 100 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
@@ -47,7 +47,7 @@ export default function Home() {
           />
         </motion.div>
         <motion.div
-          className="col-start-6 row-start-2 row-span-2 z-4 self-center"
+          className="hidden md:block col-start-6 row-start-2 row-span-2 z-4 self-center"
           initial={{ opacity: 0, translateY: 50, translateX: -100 }}
           animate={{ opacity: 1, translateY: 0, translateX: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
@@ -55,7 +55,7 @@ export default function Home() {
           <Image src="/img/shirt.png" alt="Tøj" width={250} height={250} />
         </motion.div>
         <FadeInWrapper
-          className="z-5 col-start-2 xl:row-start-5 md:row-start-4 h-2/3"
+          className="z-5 col-start-1 md:col-start-2 xl:row-start-5 md:row-start-4 h-2/3"
           delay={0.9}
           duration={0.3}
         >
@@ -63,7 +63,7 @@ export default function Home() {
         </FadeInWrapper>
 
         <FadeInWrapper
-          className="z-5 col-start-4 xl:row-start-5 md:row-start-4 h-2/3"
+          className="z-5 col-start-1 md:col-start-4 xl:row-start-5 md:row-start-4 h-2/3"
           delay={0.9}
           duration={0.3}
         >
@@ -71,7 +71,7 @@ export default function Home() {
         </FadeInWrapper>
 
         <FadeInWrapper
-          className="z-5 col-start-6 xl:row-start-5 md:row-start-4 h-2/3"
+          className="z-5 col-start-1 md:col-start-6 xl:row-start-5 md:row-start-4 h-2/3"
           delay={0.9}
           duration={0.3}
         >
