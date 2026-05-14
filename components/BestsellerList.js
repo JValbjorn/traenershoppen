@@ -29,7 +29,7 @@ return (
   <div>
     {loading && <p>Loading...</p>}
     {error && <p>Error: {error}</p>}
-    <div className="flex flex-row gap-8 overflow-x-auto w-full h-5/6">
+    <div className="flex flex-row gap-8 overflow-x-auto h-3/6">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}

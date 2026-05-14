@@ -12,32 +12,11 @@ import Fan from "@/components/Fan";
 import HomePageArch from "@/components/HomePageArch";
 import HomePageImage from "@/components/HomePageImage";
 import Parallellogram from "../components/Parallellogram";
-import ProductCard from "@/components/ProductCard";
 import FadeInWrapper from "../components/FadeInWrapper";
 import BestsellerList from "../components/BestsellerList";
 
 export default function Home() {
   const navigate = useNavigate();
-  // const [products, setProducts] = useState([]); 
-  // const [loading, setLoading] = useState(true); 
-  // const [error, setError] = useState(null); 
-
-  // // Fetch data fra Firebase
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await DataFetch("products");
-  //       setProducts(data); 
-  //     } catch (err) {
-  //       console.error("Error fetching data:", err);
-  //       setError(err.message); 
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
 
   return (
     <main className="relative overflow-hidden flex flex-col pb-[10vh]">
@@ -131,21 +110,6 @@ export default function Home() {
         >
           <h2 className="text-4xl">BESTSELLERS</h2>
           <BestsellerList />
-          <div className="flex flex-row justify-between w-full mt-10">
-
-            {/* {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-            {!loading &&
-              !error &&
-              products.map((product) => (
-                // <ProductCard
-                //   key={product.id} // Brug produktets id som nøgle
-                //   text={product.brand} // Brug "brand" som tekst
-                //   onClick={() => router.push(`/produkter/${product.id}`)} // Naviger til produktdetaljer
-                // />
-                <ProductCard key={product.id} product={product} />
-              ))} */}
-          </div>
         </FadeInWrapper>
       </section>
     </main>

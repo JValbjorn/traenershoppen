@@ -9,11 +9,7 @@ export default function Parallellogram({text, onClick, path}) {
 
     
     return (
-      <motion.div
-        className="grid grid-rows-2 grid-cols-4 min-h-20"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
-      >
+      <motion.div className="grid grid-rows-2 grid-cols-4 min-h-20">
         {isHovering && (
           <Image
             src="/img/green-fan.png"
@@ -24,7 +20,11 @@ export default function Parallellogram({text, onClick, path}) {
           />
         )}
 
-        <div className="row-start-2 col-span-3 skew-x-[-10deg] px-7 border-3 border-light-green hover:bg-light-green">
+        <div
+          className="row-start-2 col-span-3 skew-x-[-10deg] px-7 border-3 border-light-green bg-light-gray hover:bg-light-green"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
           <button
             onClick={onClick || (() => navigate(path))}
             className="skew-x-10 w-full h-full text-center"
