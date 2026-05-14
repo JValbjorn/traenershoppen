@@ -1,8 +1,6 @@
 "use client";
 import { useNavigate } from "@/utils/navigate";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import DataFetch from "../utils/DataFetch";
 
 import Image from "next/image";
 
@@ -13,36 +11,17 @@ import HomePageArch from "@/components/HomePageArch";
 import HomePageImage from "@/components/HomePageImage";
 import Parallellogram from "../components/Parallellogram";
 import FadeInWrapper from "../components/FadeInWrapper";
+import BestsellerList from "../components/BestsellerList";
 
 export default function Home() {
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]); // State til at gemme produkter
-  const [loading, setLoading] = useState(true); // State til at håndtere loading
-  const [error, setError] = useState(null); // State til at håndtere fejl
-
-  // Fetch data fra Firebase
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await DataFetch("products"); // Hent data fra DataFetch
-        setProducts(data); // Gem data i state
-      } catch (err) {
-        console.error("Error fetching data:", err);
-        setError(err.message); // Gem fejlbesked
-      } finally {
-        setLoading(false); // Stop loading
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <main className="relative overflow-hidden flex flex-col pb-[10vh]">
       <Fan />
-      <section className="flex justify-center 2xl:mt-[50vh] xl:mt-[42vh] lg:mt-[35vh] md:mt-[25vh]">
+      <section className="grid md:grid-cols-7 md:grid-rows-5 grid-cols-1 gap-5 mt-10 justify-items-center h-auto">
         <motion.div
-          className="absolute top-[9%] left-[10%] w-1/10"
+          className="hidden md:block col-start-2 row-start-2 row-span-2 z-4 self-center"
           initial={{ opacity: 0, translateY: 50, translateX: 100 }}
           animate={{ opacity: 1, translateY: 0, translateX: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
@@ -55,7 +34,7 @@ export default function Home() {
           />
         </motion.div>
         <motion.div
-          className="absolute top-[5%] left-[50%] w-1/8 translate-x-[-50%]"
+          className="hidden md:block col-start-4 row-start-1 row-span-2 z-4 self-center"
           initial={{ opacity: 0, translateY: 100 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
@@ -68,29 +47,49 @@ export default function Home() {
           />
         </motion.div>
         <motion.div
-          className="absolute top-[7%] right-[10%] w-1/6"
+          className="hidden md:block col-start-6 row-start-2 row-span-2 z-4 self-center"
           initial={{ opacity: 0, translateY: 50, translateX: -100 }}
           animate={{ opacity: 1, translateY: 0, translateX: 0 }}
           transition={{ delay: 0.7, duration: 0.3, ease: "easeInOut" }}
         >
           <Image src="/img/shirt.png" alt="Tøj" width={250} height={250} />
         </motion.div>
+        <FadeInWrapper
+          className="z-5 col-start-1 md:col-start-2 xl:row-start-5 md:row-start-4 h-2/3"
+          delay={0.9}
+          duration={0.3}
+        >
+          <CTAButton text="Fodbold" path="/fodbold" />
+        </FadeInWrapper>
+
+        <FadeInWrapper
+          className="z-5 col-start-1 md:col-start-4 xl:row-start-5 md:row-start-4 h-2/3"
+          delay={0.9}
+          duration={0.3}
+        >
+          <CTAButton text="Håndbold" path="/haandbold" />
+        </FadeInWrapper>
+
+        <FadeInWrapper
+          className="z-5 col-start-1 md:col-start-6 xl:row-start-5 md:row-start-4 h-2/3"
+          delay={0.9}
+          duration={0.3}
+        >
+          <CTAButton text="Tøj" path="toej" />
+        </FadeInWrapper>
 
         <motion.div
-          className="relative w-2/3 flex md:flex-row flex-col items-center justify-around shrink text-center z-3"
+          className="relative w-full col-span-5 col-start-2 row-start-4 grid grid-cols-3 gap-60 lg:gap-50 text-center h-2/3 z-3"
           initial={{ opacity: 0, translateY: 50 }}
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ delay: 0.9, duration: 0.3, ease: "easeInOut" }}
-        >
-          <CTAButton text="Fodbold" path="/fodbold" />
-          <CTAButton text="Håndbold" path="/haandbold" />
-          <CTAButton text="Tøj" path="toej" />
-        </motion.div>
+        ></motion.div>
       </section>
-      <section className="relative grid grid-cols-3 grid-auto-rows gap-55 w-full items-center justify-between -mt-20 pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start">
+      <section className="relative grid grid-cols-3 grid-auto-rows 2xl:gap-55 xl:gap-50 lg:gap-30 md:gap-20 w-full items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start 2xl:-mt-5 xl:-mt-35 lg:-mt-25 md:-mt-20">
         <FadeInWrapper
-          className="col-span-3 h-220 z-2 relative flex"
+          className="col-span-3 xl:h-220 lg:h-190 md:h-130 z-2 relative flex"
           amount={0.5}
+          duration={0.5}
         >
           <HomePageArch />
           <HomePageImage />
@@ -98,6 +97,7 @@ export default function Home() {
         <FadeInWrapper
           className="col-span-2 col-start-2 flex flex-col w-full"
           amount={0.4}
+          duration={0.5}
         >
           <h2 className="text-4xl">POPULÆRE KATEGORIER</h2>
           <div className="flex flex-row justify-around w-full">
@@ -126,21 +126,10 @@ export default function Home() {
         <FadeInWrapper
           className="flex flex-col w-full col-span-2 col-start-1 mt-40"
           amount={0.4}
+          duration={0.5}
         >
           <h2 className="text-4xl">BESTSELLERS</h2>
-          <div className="flex flex-row justify-between w-full mt-10">
-            {loading && <p>Loading...</p>}
-            {error && <p>Error: {error}</p>}
-            {!loading &&
-              !error &&
-              products.map((product) => (
-                <Parallellogram
-                  key={product.id} // Brug produktets id som nøgle
-                  text={product.brand} // Brug "brand" som tekst
-                  onClick={() => router.push(`/produkter/${product.id}`)} // Naviger til produktdetaljer
-                />
-              ))}
-          </div>
+          <BestsellerList />
         </FadeInWrapper>
       </section>
     </main>

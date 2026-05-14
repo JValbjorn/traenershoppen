@@ -1,74 +1,10 @@
 "use client";
-import { motion, useMotionValue, useScroll, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 
 export default function Fan() {
-  const { scrollYProgress } = useScroll();
-  const [isInView, setIsInView] = useState(false);
-  const [pathLength, setPathLength] = useState(1); // Standardværdi for pathLength
-  const lineRef = useRef(null);
-
-  // Opdaterer højden på viewporten ved scroll
-  const viewportHeight = useMotionValue(
-    typeof window !== "undefined" ? window.innerHeight : 0
-  );
-
-  // Opdater viewportHeight, når vinduet ændrer størrelse
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        viewportHeight.set(window.innerHeight);
-      };
-
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, [viewportHeight]);
-
-  // Intersection Observer til at overvåge id="Line"-gruppen
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsInView(entry.isIntersecting);
-        },
-        { root: null, threshold: 0.01, rootMargin: "0px 0px -40px 0px" }
-      );
-
-      if (lineRef.current) {
-        observer.observe(lineRef.current);
-      }
-
-      return () => {
-        if (lineRef.current) {
-          observer.unobserve(lineRef.current);
-        }
-      };
-    }
-  }, []);
-
-  // Beregn den samlede længde af path
-  useEffect(() => {
-    if (typeof window !== "undefined" && lineRef.current) {
-      const pathElement = lineRef.current.querySelector("path");
-      if (pathElement) {
-        const totalLength = pathElement.getTotalLength();
-        setPathLength(totalLength); // Gem den samlede længde af path
-      }
-    }
-  }, []);
-
-  // Juster pathLength for at tage højde for scrollhastighed
-  const adjustedPathLength = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, pathLength] // Brug hele længden af path
-  );
-  console.log("isInView:", isInView); // Debugging for at se, om gruppen er i viewporten
-  console.log("adjustedPathLength:", adjustedPathLength.get()); // Debugging for at se pathLength
 
   return (
-    <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
+    <div className="absolute 2xl:-top-100 xl:-top-90 lg:-top-80 md:-top-70 md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1687.12 3333.36">
         {/* venstre path */}
         <g id="left">
@@ -105,27 +41,14 @@ export default function Fan() {
             style={{ transformOrigin: "bottom center" }}
           />
         </g>
-        <g id="Line" ref={lineRef}>
-          <motion.path
-            d="M835.46 1385.24 835.46 1510.2 312.53 1695.71 312.53 1953.82 1381.25 2224.02 1381.25 2541.28 308.5 2745.61 311.5 3423.14"
-            fill="none"
-            stroke="var(--dark_green)"
-            strokeWidth="100"
-            strokeDasharray="1"
-            style={{
-              pathLength: isInView ? adjustedPathLength || 0 : 0,
-            }}
+        <g id="Line">
+          <path
+           className="cls-3"
+           d="M835.46 1385.24 835.46 1510.2 312.53 1695.71 312.53 1953.82 1381.25 2224.02 1381.25 3350.06"
           />
-          <motion.path
+          <path
             className="cls-4"
-            d="M834.77 1383.05 834.77 1510.2 311.84 1695.71 311.84 1953.82 1380.56 2224.02 1380.56 2541.28 307.8 2745.61 310.8 3423.14"
-            fill="none"
-            stroke="var(--shaded_green)"
-            strokeWidth="100"
-            strokeDasharray="1"
-            style={{
-              pathLength: isInView ? adjustedPathLength || 0 : 0,
-            }}
+            d="M834.77 1383.05 834.77 1510.2 311.84 1695.71 311.84 1953.82 1380.56 2224.02 1380.56 3356.7"
           />
         </g>
       </svg>
