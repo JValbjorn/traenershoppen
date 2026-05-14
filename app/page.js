@@ -1,8 +1,6 @@
 "use client";
 import { useNavigate } from "@/utils/navigate";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import DataFetch from "../utils/DataFetch";
 
 import Image from "next/image";
 
@@ -87,9 +85,9 @@ export default function Home() {
           transition={{ delay: 0.9, duration: 0.3, ease: "easeInOut" }}
         ></motion.div>
       </section>
-      <section className="relative grid grid-cols-3 grid-auto-rows gap-55 w-full items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start xl:-mt-30">
+      <section className="relative grid grid-cols-3 grid-auto-rows 2xl:gap-55 xl:gap-50 lg:gap-30 md:gap-20 w-full items-center justify-between pb-32 px-16 font-sans bg-var(--light_gray) sm:items-start 2xl:-mt-5 xl:-mt-35 lg:-mt-25 md:-mt-20">
         <FadeInWrapper
-          className="col-span-3 h-220 z-2 relative flex"
+          className="col-span-3 xl:h-220 lg:h-190 md:h-130 z-2 relative flex"
           amount={0.5}
           duration={0.5}
         >
