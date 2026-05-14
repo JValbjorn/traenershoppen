@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+{/**    endnu ikke linket til firebase med ID'er, skal opdateres når der er lavet produkt kort */}
 export default function CartManager() {
   const [cart, setCart] = useState([]);
 
