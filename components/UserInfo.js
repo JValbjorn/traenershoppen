@@ -15,12 +15,20 @@ export function UserInfo() {
 
   return (
     <div>
-      <p>{savedData.firstName || " "} {savedData.lastName || " "}</p>
+      <h3>Kontaktoplysninger</h3>
+      <p>
+        {savedData.firstName || " "} {savedData.lastName || " "}
+      </p>
       <p>{savedData.phone || " "}</p>
       <p>{savedData.address || " "}</p>
-      <p>{savedData.postalCode || " "} {savedData.city || " "}</p>
+      <p>
+        {savedData.postalCode || " "} {savedData.city || " "}
+      </p>
       <p>{savedData.country || " "}</p>
       <p>{savedData.companyName || " "}</p>
+
+      <h3 className="mt-5">Leveringsoplysninger</h3>
+      <p>{savedData.deliveryMethod || " "}</p>
     </div>
   );
 }
