@@ -68,7 +68,7 @@ export default function Fan() {
   console.log("adjustedPathLength:", adjustedPathLength.get()); // Debugging for at se pathLength
 
   return (
-    <div className="absolute 2xl:top-[-26%] xl:top-[-24%] lg:top-[-21%] md:top-[-18%] md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
+    <div className="absolute 2xl:-top-100 xl:-top-90 lg:-top-80 md:-top-70 md:flex z-0 w-[120vw] left-[-10vw] h-auto hidden">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1687.12 3333.36">
         {/* venstre path */}
         <g id="left">
