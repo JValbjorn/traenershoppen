@@ -26,11 +26,11 @@ useEffect(() => {
 }, []);
 
 return (
-  <div>
+  <div className="mt-5">
     {loading && <p>Loading...</p>}
     {error && <p>Error: {error}</p>}
-    <div className="flex flex-row gap-8 overflow-x-auto h-3/6">
-      {products.map((product) => (
+    <div className="flex flex-row gap-8 h-3/6">
+      {products.slice(0,3).map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>

@@ -126,7 +126,7 @@ export default function Home() {
           </div>
         </FadeInWrapper>
         <FadeInWrapper
-          className="flex flex-col w-full col-span-2 col-start-1"
+          className="flex flex-col w-full col-span-2 col-start-1 mt-40"
           amount={0.4}
           duration={0.5}
         >
