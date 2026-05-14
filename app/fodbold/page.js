@@ -1,26 +1,14 @@
-// app/products/page.jsx
-"use client";
-
-import { useEffect, useState } from "react";
 import { ref, get } from "firebase/database";
 import { db } from "@/lib/firebase";
 import ProductCard from "@/components/ProductCard";
 
-export default function ProductsPage() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const snapshot = await get(ref(db, "products"));
-      const data = snapshot.val();
-      if (data) setProducts(Object.values(data));
-    };
-
-    fetchProducts();
-  }, []);
+export default async function Page() {
+  const snapshot = await get(ref(db, "products"));
+  const data = snapshot.val();
+  const products = Object.values(data);
 
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-4 p-8">
       {products.map((product, i) => (
         <ProductCard key={i} product={product} />
       ))}
