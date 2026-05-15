@@ -226,7 +226,7 @@ export default function MenuItems() {
                 type="button"
                 className="relative text-white py-2 px-4 transition before:absolute before:inset-0 before:border-2 before:border-light-green before:opacity-0 before:transition-all before:duration-200 before:transform before:skew-x-[-10deg] hover:before:opacity-100 focus:before:opacity-100 focus:outline-none"
               >
-                <Link href={`/produkter/${item.slug}`}className="relative z-10">{item.title}</Link>
+                <Link href={`/browsing/${item.slug}`}className="relative z-10">{item.title}</Link>
               </button>
 
               <div
@@ -243,7 +243,7 @@ export default function MenuItems() {
                       {item.sections.map((section) => (
                         <div key={section.title}>
                           <Link 
-                          href={`/produkter/${item.slug}/${section.slug}`}
+                          href={`/browsing/${item.slug}/${section.slug}`}
                           className="text-sm font-semibold uppercase tracking-[0.2em] text-white bg-dark-green mb-4">
                             {section.title}
                           </Link>
@@ -251,7 +251,7 @@ export default function MenuItems() {
                             {section.categories.map((category) => (
                               <Link
                                 key={category.title}
-                                href={`/produkter/${item.slug}/${section.slug}/${category.slug}`}
+                                href={`/browsing/${item.slug}/${section.slug}/${category.slug}`}
                                 className="block px-3 py-2 transition hover:bg-light-green"
                               >
                                 <p className="font-semibold text-white">
@@ -268,7 +268,7 @@ export default function MenuItems() {
                       {item.categories?.map((category) => (
                         <Link
                           key={category.title}
-                          href={`/produkter/${item.slug}/${category.slug}`}
+                          href={`/browsing/${item.slug}/${category.slug}`}
                           className="block px-3 py-3 transition hover:bg-light-green"
                         >
                           <p className="font-semibold">{category.title}</p>
