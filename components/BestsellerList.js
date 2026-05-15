@@ -29,9 +29,9 @@ return (
   <div className="mt-5">
     {loading && <p>Loading...</p>}
     {error && <p>Error: {error}</p>}
-    <div className="flex flex-row gap-8 h-3/6">
+    <div className="flex md:flex-row md:flex-nowrap gap-8 flex-wrap">
       {products.slice(0,3).map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.id} product={product}/>
       ))}
     </div>
   </div>
