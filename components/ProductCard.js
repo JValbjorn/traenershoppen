@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useNavigate } from "@/utils/navigate.js";
 
 export default function ProductCard({ product }) {
   const [selectedColor, setSelectedColor] = useState(0);
+  const navigate = useNavigate();
 
   return (
-    <div className="relative shadow p-4 flex flex-col items-center gap-2 w-full bg-white h-auto">
+  <div className="relative shadow p-4 flex flex-col items-center gap-2 w-full bg-white h-auto cursor-pointer" 
+  onClick={() => navigate(`/browsing/${product.id}`)}>
       {product.onSale && (
         <div className="absolute top-0 left-0 overflow-hidden w-24 h-24 pointer-events-none z-10">
           <span className="absolute top-4 -left-8 w-36 bg-lime-500 text-black text-sm font-bold text-center rotate-[-45deg] py-1 shadow-md">
